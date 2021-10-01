@@ -7,7 +7,7 @@
 <td>PrintColors</td>
 <td>update</td>
 <td>delete</td>
-new BillDetail <a hrrf="?controller=billdetail&action=newBilldetail">click</a><br>
+New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]<br>
 <?php
     foreach($billdetailList as $billdetail)
     {
