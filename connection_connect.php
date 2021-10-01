@@ -9,16 +9,8 @@ if($conn->connect_error)
 {
     die("Connection failed: ".$conn->connect_error);
 }
-else
-{
-    echo "Connection successfully";
-}
 if(!$conn->select_db($dbname))
 {
     die("Connection failed: ".$conn->connect_error);
-}
-else
-{
-    echo "Connection db successfully";
 }
 ?>
