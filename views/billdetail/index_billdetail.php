@@ -2,6 +2,7 @@
 <table border="1">
 <tr><td>BillID</td>
 <td>ProductID</td>
+<td>ProductName</td>
 <td>ColorID</td>
 <td>Quantity</td>
 <td>PrintColors</td>
@@ -14,6 +15,7 @@ New BillDetail [<a href="?controller=billdetail&action=newbilldetail">click</a>]
         echo"
         <tr><td>$billdetail->billid</td>
         <td>$billdetail->productid</td>
+        <td>$billdetail->productname</td>
         <td>$billdetail->colorid</td>
         <td>$billdetail->quantity</td>
         <td>$billdetail->numcolor</td>
