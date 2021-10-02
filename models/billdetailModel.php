@@ -35,4 +35,13 @@ class BillDetail
         require("connection_close.php");
         return $billdetailList;
     }
+    public static function Add($billid,$productid,$colorid,$quantity,$numcolor)
+    {
+        require("connection_connect.php");
+        $sql="insert into BillDetail(Bill_ID,Product_ID,Color_ID,Quantity,numcolor)values
+        ('$billid','$productid','$colorid','$quantity','$numcolor')";
+        $result =$conn->query($sql);
+        require("connection_close.php");
+        return "add success $result rows";
+    }
 }
