@@ -1,5 +1,5 @@
 <?php
-    $controllers =array('pages'=>['home','error'],'billdetail'=>['index']);
+    $controllers =array('pages'=>['home','error'],'billdetail'=>['index','newBilldetail']);
 
     function call($controller,$action)
     {
@@ -9,6 +9,9 @@
             case "pages":$controller= new PagesController();
                         break;
             case "billdetail":require_once("models/billdetailModel.php");
+                            require_once("models/productcolorModel.php");
+                            require_once("models/productModel.php");
+                            require_once("models/colorModel.php");
                         $controller=new BillDetailController();
                         break;
         }
