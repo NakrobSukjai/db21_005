@@ -51,7 +51,7 @@ class BillDetail
         INNER JOIN Product ON Product.Product_ID=BillDetail.Product_ID
         INNER JOIN Colors ON Colors.Color_ID=BillDetail.Color_ID
         where(BillDetail.Bill_ID like '%$key%' or Product.Product_ID like '%$key%' or 
-        Colors.Color_ID like '%$key%')";
+        Product.P_Name like '%$key%' or Colors.Color_ID like '%$key%')";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
         {
