@@ -8,7 +8,7 @@
             {echo "<option value=$product->productid>$product->productname</option>";}?>
     </select></label><br>
     <label>สี<select name="Color_ID">
-            <?php foreach($colorList as $color)
+            <?php foreach($productcolorList as $color)
             {echo "<option value=$color->colorid>$color->colorname</option>";}?>
     </select></label><br>
     <label>จำนวนสินค้า <input type="number" name="Quantity"/></label><br>
