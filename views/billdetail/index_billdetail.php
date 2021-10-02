@@ -10,7 +10,6 @@
 <td>delete</td>
 New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]<br>
 <?php
-    echo "kuy";
     foreach($billdetailList as $billdetail)
     {
         echo"
