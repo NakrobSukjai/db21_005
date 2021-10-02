@@ -23,4 +23,9 @@ class BillDetailController
         BillDetail::Add($billid,$productid,$colorid,$quantity,$numcolor);
         BillDetailController::index();
     }
+    public function search(){
+        $key=$_GET['key'];
+        $billdetailList=BillDetail::search($key);
+        require_once('views/billdetail/index_billdetail.php');
+    }
 }
