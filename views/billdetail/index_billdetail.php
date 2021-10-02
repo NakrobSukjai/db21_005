@@ -11,7 +11,7 @@
 New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]<br>
 <form method="get" action="">
     <input type="text" name="key">
-    <input type="hidden" name="controller" value="student"/>
+    <input type="hidden" name="controller" value="billdetail"/>
     <button type="submit" name="action" value="search">Search</button>
 </form>
 <?php
