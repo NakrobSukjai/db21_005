@@ -13,4 +13,14 @@ class BillDetailController
         $colorList=Colors::getAll();
         require_once("views/billdetail/newBilldetail.php");
     }
+    public function addBilldetail()
+    {
+        $billid=$_GET['Bill_ID'];
+        $productid=$_GET['Product_ID'];
+        $colorid=$_GET['Color_ID'];
+        $quantity=$_GET['Quantity'];
+        $numcolor=$_GET['numcolor'];
+        BillDetail::Add($billid,$productid,$colorid,$quantity,$numcolor);
+        BillDetailController::index();
+    }
 }
