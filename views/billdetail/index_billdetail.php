@@ -9,6 +9,11 @@
 <td>update</td>
 <td>delete</td>
 New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]<br>
+<form method="get" action="">
+    <input type="text" name="key">
+    <input type="hidden" name="controller" value="student"/>
+    <button type="submit" name="action" value="search">Search</button>
+</form>
 <?php
     foreach($billdetailList as $billdetail)
     {
