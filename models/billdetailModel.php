@@ -1,13 +1,14 @@
 <?php 
 class BillDetail
 {
-    public $billid,$productid,$productname,$colorid,$quantity,$numcolor;
-    public function __construct($Bill_ID,$Product_ID,$P_Name,$Color,$Quantity,$numcolor)
+    public $billid,$productid,$productname,$colorid,$colorname,$quantity,$numcolor;
+    public function __construct($Bill_ID,$Product_ID,$P_Name,$Color,$colorname,$Quantity,$numcolor)
     {
         $this->billid=$Bill_ID;
         $this->productid=$Product_ID;
         $this->productname=$P_Name;
         $this->colorid=$Color;
+        $this->colorname=$colorname;
         $this->quantity=$Quantity;
         $this->numcolor=$numcolor;
     }
@@ -25,10 +26,11 @@ class BillDetail
             $Bill_ID=$my_row[Bill_ID];
             $Product_ID=$my_row[Product_ID];
             $P_Name=$my_row[P_Name];
-            $Color=$my_row[C_Name];
+            $Color=$my_row[Color_ID];
+            $colorname=$my_row[C_Name];
             $Quantity=$my_row[Quantity];
             $numcolor=$my_row[numcolor];
-            $billdetailList[]=new BillDetail($Bill_ID,$Product_ID,$P_Name,$Color,$Quantity,$numcolor);
+            $billdetailList[]=new BillDetail($Bill_ID,$Product_ID,$P_Name,$Color,$colorname,$Quantity,$numcolor);
         }
         require("connection_close.php");
         return $billdetailList;
