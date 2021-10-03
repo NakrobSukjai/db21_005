@@ -87,10 +87,11 @@ class BillDetail
         $numcolor=$my_row[numcolor];
         return new BillDetail($Bill_ID,$Product_ID,$P_Name,$Color,$colorname,$Quantity,$numcolor);
     }
-    public static function update($billid,$productid,$colorid,$quantity,$numcolor)
+    public static function update($billid,$productid,$colorid,$quantity,$numcolor,$lastbillid,$lastproductid,$lastcolorid,$lastquantity,$lastnumcolor)
     {
         require("connection_connect.php");
-        $sql="UPDATE BillDetail SET Bill_ID='$billid',Product_ID='$productid',Color_ID='$colorid',Quantity='$quantity',numcolor='$numcolor' WHERE BillDetail.Bill_ID='$billid' AND BillDetail.Product_ID='$productid' AND BillDetail.Color_ID='$colorid' AND BillDetail.Quantity=$quantity AND numcolor=$numcolor";
+        $sql="UPDATE BillDetail SET BillDetail.Bill_ID='$billid',BillDetail.Product_ID='$productid',BillDetail.Color_ID='$colorid',BillDetail.Quantity=$quantity,BillDetail.numcolor=$numcolor 
+        WHERE BillDetail.Bill_ID='$lastbillid' AND BillDetail.Product_ID='$lastproductid' AND BillDetail.Color_ID='$lastcolorid' AND BillDetail.Quantity=$lastquantity AND numcolor=$lastnumcolor";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
