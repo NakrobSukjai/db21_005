@@ -6,10 +6,10 @@ class Bill
     public function __construct($bill_id, $date , $P_Name , $emp_name , $cus_name)
     {
         $this->bill_id = $bill_id;
-        $this->date = $date
-        $this->P_Name = $P_Name
-        $this->emp_name = $emp_name
-        $this->cus_name = $cus_name
+        $this->date = $date ;
+        $this->P_Name = $P_Name;
+        $this->emp_name = $emp_name;
+        $this->cus_name = $cus_name;
     }
 
     public static function getAll()
@@ -30,10 +30,11 @@ class Bill
             $C_Name = $my_row[C_Name]
             $billList[] = new Bill($Bill_ID,$Date,$Pay_Name,$E_Name,$C_Name);
         }
-        require("connection_close.php")
+        require("connection_close.php");
         return $billList ;
 
     }
 
 
 }
+?>
