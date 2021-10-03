@@ -1,5 +1,5 @@
 <?php
-    $controllers =array('pages'=>['home','error'],'billdetail'=>['index','newBilldetail','addBilldetail','searchBilldetail','updateFormBilldetail','updateBilldetail']);
+    $controllers =array('pages'=>['home','error'],'billdetail'=>['index','newBilldetail','addBilldetail','searchBilldetail','updateFormBilldetail','updateBilldetail','deleteConfirmBilldetail','deleteBilldetail']);
 
     function call($controller,$action)
     {
@@ -10,9 +10,8 @@
                         break;
             case "billdetail":require_once("models/billdetailModel.php");
                             require_once("models/productcolorModel.php");
-
-                        $controller=new BillDetailController();
-                        break;
+                            $controller=new BillDetailController();
+                            break;
         }
         $controller->{$action}();
     }
