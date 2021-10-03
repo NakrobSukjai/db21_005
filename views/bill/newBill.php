@@ -6,9 +6,14 @@
         <?php
         foreach($empList as $emp)
         {
-            echo "<option value = $emp->id>"
+            echo "<option value = $emp->emp_name></option>";
         }
-
+        ?>
+        </select></label><br>
+    
+    <input type ="hidden" name="controller" value="bill">
+    <button type = "submit" name ="action" value="addBill">Save</button>
+    <button type = "submit" name = "action" value ="index">Back</button>
 
 
 

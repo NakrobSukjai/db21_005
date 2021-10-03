@@ -12,7 +12,7 @@ class Employees
         $empList = [] ;
         require("connection_connect.php");
         $sql = "SELECT * From Employees as emp
-        ORDER BY emp.EMP_ID"
+        ORDER BY emp.EMP_ID" ;
         $result = $conn -> query($sql);
         while($my_row = $result -> fetch_assoc())
         {

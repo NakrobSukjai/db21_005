@@ -1,7 +1,7 @@
 <?php
 class Bill
 {
-    public $bill_id , $date , $P_Name , $emp_name , $cus_name 
+    public $bill_id , $date , $P_Name , $emp_name , $cus_name  ;
 
     public function __construct($bill_id, $date , $P_Name , $emp_name , $cus_name)
     {
@@ -27,7 +27,7 @@ class Bill
             $Date = $my_row[Date];
             $Pay_Name = $my_row[Pay_Name];
             $E_Name = $my_row[E_Name];
-            $C_Name = $my_row[C_Name]
+            $C_Name = $my_row[C_Name];
             $billList[] = new Bill($Bill_ID,$Date,$Pay_Name,$E_Name,$C_Name);
         }
         require("connection_close.php");
