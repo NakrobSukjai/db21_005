@@ -7,6 +7,7 @@
 <td>ลูกค้า</td>
 <td>Update</td>
 <td>Delete</td>
+
 <?php
     foreach($billList as $bill)
     {

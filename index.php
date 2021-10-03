@@ -15,7 +15,9 @@
     <body>
         <?php echo "controller=".$controller," action=".$action ; ?>
         <br>[<a href="?controller=pages&action=home">Home</a>]
+            [<a href="?controller=bill&action=index">Bill</a>]
             [<a href="?controller=billdetail&action=index">BillDetail</a>]
+            [<a href="?controller=Rate&action=index">Rate</a>]
         <br>
         <?php require_once("routes.php"); ?>
     </body>
