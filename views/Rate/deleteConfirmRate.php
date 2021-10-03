@@ -1,7 +1,7 @@
 <?php echo "<br>Are you sure to delete this BillDetail <br>
             <br>ProductName:$Rate->productname
             <br>Rate_ID:$Rate->rateid
-            <br>Quantityนค้าที่สั่ง:$Rate->quantity  
+            <br>Quantity:$Rate->quantity  
             <br>Price:$Rate->price  
             <br>PriceAddPerColor:$Rate->priceaddpercolor<br>";?>
 <form method="get" action="">
