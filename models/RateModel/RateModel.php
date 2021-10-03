@@ -15,11 +15,11 @@ class RateModel{
         $this->price = $Price;
         $this->priceaddpercolor = $PriceAddPerColor;
     }
-    public static function get($pid,$rid,$Quantity,$rprice,$priceaddpercolor){
+    public static function get($productid,$rateid,$Quantity,$price,$priceaddpercolor){
         require("connection_connect.php");
         $sql = "SELECT * FROM PPPOrder
         INNER JOIN PPPOrders ON Product.Product_ID = PPPOrders.Product_ID
-        WHERE PPPOrders.Product_ID = '$pid' AND PPPOrders.PPP_id = '$rid' AND PPPOrders.Quantity = '$Quantity' AND PPPOrders.Price = '$rprice' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
+        WHERE PPPOrders.Product_ID = '$productid' AND PPPOrders.PPP_id = '$rateid' AND PPPOrders.Quantity = '$Quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
         ORDER BY PPPOrder.Product_ID ASC";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
@@ -76,30 +76,30 @@ class RateModel{
 
     }
 
-    public static function Add($pid,$rid,$rquantity,$rprice,$rpriceaddpercolor)
+    public static function Add($productid,$rateid,$quantity,$price,$priceaddpercolor)
     {
         require("connection_connect.php");
         $sql="insert into PPPOrder(Product_ID,PPP_ID,Quantity,Price,PriceAddPerColor)values
-        ('$pid','$rid','$rquantity','$rprice','$rpriceaddpercolor')";
+        ('$productid','$rateid','$quantity','$price','$priceaddpercolor')";
         $result =$conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
     }
 
-    public static function update($bpid,$brid,$brquantity,$brprice,$brpriceaddpercolor,$apid,$arid,$arquantity,$arprice,$arpriceaddpercolor)
+    public static function update($productid,$rateid,$quantity,$price,$priceaddpercolor,$lastproductid,$lastrateid,$lastquantity,$lastprice,$lastpriceaddpercolor)
     {
         require("connection_connect.php");
-        $sql="UPDATE PPPOeder SET PPPOeder.Product_ID='$bpid',PPPOeder.PPP_ID='$brid',PPPOeder.Quantity='$brquantity',PPPOeder.Price=$brprice,PPPOeder.PriceAddPerColor=$brpriceaddpercolor
-        WHERE  PPPOeder.Product_ID='$apid' AND PPPOeder.PPP_ID='$arid' AND PPPOeder.Quantity='$arquantity' AND PPPOeder.Price=$arprice AND PriceAddPerColor=$lrpriceaddpercolor";
+        $sql="UPDATE PPPOeder SET PPPOeder.Product_ID='$productid',PPPOeder.PPP_ID='$rateid',PPPOeder.Quantity='$quantity',PPPOeder.Price=$price,PPPOeder.PriceAddPerColor=$priceaddpercolor
+        WHERE  PPPOeder.Product_ID='$lastproductid' AND PPPOeder.PPP_ID='$lastrateid' AND PPPOeder.Quantity='$lastquantity' AND PPPOeder.Price=$lastprice AND PriceAddPerColor=$lrpriceaddpercolor";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
     }
 
-    public static function delete($pid,$rid,$rquantity,$rprice,$rpriceaddpercolor)
+    public static function delete($productid,$rateid,$quantity,$price,$priceaddpercolor)
     {
         require("connection_connect.php");
-        $sql="DELETE FROM PPPORDER WHERE PPPOrder.Product_ID='$pid' AND PPPOrder.PPP_ID='$rid' AND PPPOrder.Quantity='$rquantity' AND PPPOrder.Price=$rprice AND PPPOrder.PriceAddPerColor=$rpriceaddpercolor";
+        $sql="DELETE FROM PPPORDER WHERE PPPOrder.Product_ID='$productid' AND PPPOrder.PPP_ID='$rateid' AND PPPOrder.Quantity='$quantity' AND PPPOrder.Price=$price AND PPPOrder.PriceAddPerColor=$priceaddpercolor";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "delete success $result row";
