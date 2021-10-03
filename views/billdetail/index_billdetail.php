@@ -24,8 +24,8 @@ New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]
         <td>$billdetail->colorname</td>
         <td>$billdetail->quantity</td>
         <td>$billdetail->numcolor</td>
-        <td><a href=?controller=billdetail&action=updateFormBilldetail&$Bill_ID=$billdetail->billid>update</td>
-        <td>delete</td></tr>";
+        <td><a href=?controller=billdetail&action=updateFormBilldetail&Bill_ID=$billdetail->billid>update</td>
+        <td><a href=?controller=billdetail&action=deleteConfirmBilldetail&Bill_ID=$billdetail->billid>delete</td>
     }
     echo "</table>";
 ?>
