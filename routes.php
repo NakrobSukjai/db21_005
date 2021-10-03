@@ -10,8 +10,7 @@
                         break;
             case "billdetail":require_once("models/billdetailModel.php");
                             require_once("models/productcolorModel.php");
-                            require_once("models/productModel.php");
-                            require_once("models/colorModel.php");
+
                         $controller=new BillDetailController();
                         break;
         }
