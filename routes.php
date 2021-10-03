@@ -8,11 +8,11 @@
         {
             case "pages":$controller= new PagesController();
                         break;
-            case "billdetail":require_once("models/billdetailModel.php");
-                            require_once("models/productcolorModel.php");
-                            require_once("models/colorModel.php");
-                            require_once("models/productModel.php");
-                            require_once("models/billModel.php");
+            case "billdetail":require_once("models/billdetailModel/billdetailModel.php");
+                            require_once("models/billdetailModel/productcolorModel.php");
+                            require_once("models/billdetailModel/colorModel.php");
+                            require_once("models/billdetailModel/productModel.php");
+                            require_once("models/billdetailModel/billModel.php");
                             $controller=new BillDetailController();
                             break;
         }
