@@ -4,10 +4,11 @@
     <label>ลูกค้า <input type = "text" name="C_name"/></label><br>
     <label>พนักงาน <select name = "E_name">
         <?php
-        foreach($empList as $emp)
-        {
-            echo "<option value = $emp->emp_name></option>";
-        }
+            foreach ($empList as $emp) 
+            {
+               echo"<tr><td>$emp->emp_name</td></tr>";
+            }
+            echo "</table>";
         ?>
         </select></label><br>
     
