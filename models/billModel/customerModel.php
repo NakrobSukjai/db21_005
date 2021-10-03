@@ -5,7 +5,7 @@ class Customer
 
     public function __construct($cus_id , $cus_name)
     {
-        $this->cus_id = $id ;
+        $this->cus_id = $cus_id ;
         $this->cus_name = $cus_name;
     }
 
@@ -21,13 +21,14 @@ class Customer
         {
             $Customer_ID = $my_row[Customer_ID];
             $C_Name = $my_row[C_Name];
-            $CustomerList[] = new Customer($Customer_ID,$C_Name)
+            $CustomerList[] = new Customer($Customer_ID,$C_Name);
 
         }
         require("connection_close.php");
-        return $CustomerList
+        return $CustomerList;
 
     }
 
 
 }
+?>
