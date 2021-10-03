@@ -1,5 +1,5 @@
 <?php
-class RateModel{
+class Rate{
     public $productid;
     public $productname;
     public $rateid;
