@@ -18,7 +18,7 @@ class RateModel{
     public static function get($productid,$rateid,$Quantity,$price,$priceaddpercolor){
         require("connection_connect.php");
         $sql = "SELECT * FROM PPPOrders
-        
+        INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
         WHERE PPPOrders.Product_ID = '$productid' AND PPPOrders.PPP_id = '$rateid' AND PPPOrders.Quantity = '$Quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
         ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
@@ -36,7 +36,7 @@ class RateModel{
         $RateList=[];
         require("connection_connect.php");
         $sql = "SELECT * FROM PPPOrders
-        
+        INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
         ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
@@ -57,7 +57,7 @@ class RateModel{
         $RateList=[];
         require("connection_connect.php");
         $sql = "SELECT * FROM PPPOrders
-        
+        INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
         WHERE(PPPOrders.Product_ID like '%$key%' or PPPOrders.PPP_ID like '%$key%' or PPPOrders.Quantity like '%$key%' or PPPOrders.Price like '%$key%' or PPPOrders.PriceAddPerColor like '%$key%')
         ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
