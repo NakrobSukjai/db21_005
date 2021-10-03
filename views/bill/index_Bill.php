@@ -7,7 +7,7 @@
 <td>ลูกค้า</td>
 <td>Update</td>
 <td>Delete</td>
-
+new bill [<a href="?controller=bill&action=newBill">click</a>]<br>
 <?php
     foreach($billList as $bill)
     {
