@@ -6,8 +6,7 @@
 <td>Quantity</td>
 <td>RatePrice</td>
 <td>PriceAddPerColor</td>
-<td>Update</td>
-<td>Delete</td>
+
 New Rate [<a href="?controller=Rate&action=newRate">click</a>]<br>
 
 <?php
@@ -20,8 +19,6 @@ New Rate [<a href="?controller=Rate&action=newRate">click</a>]<br>
         <td>$Rate->Quantity</td>
         <td>$Rate->price</td>
         <td>$Rate->priceaddpercolor</td>
-        <td>update</td>
-        <td>delete</td>
         </tr>
         ";
     }
