@@ -24,9 +24,9 @@ class RateModel{
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         $Product_ID=$my_row[Product_ID];
-        $P_Name=$my_row[P_Name$P_Name];
-        $PPP_ID=$my_row[PPP_ID$PPP_ID];
-        $Quantity=$my_row[Quantity$Quantity];
+        $P_Name=$my_row[P_Name];
+        $PPP_ID=$my_row[PPP_ID];
+        $Quantity=$my_row[Quantity];
         $Price=$my_row[Price];
         $PriceAddPerColor=$my_row[PriceAddPerColor];
         return new PPPOrder($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor);
@@ -42,9 +42,9 @@ class RateModel{
         while($my_row=$result->fetch_assoc())
         {
             $Product_ID=$my_row[Product_ID];
-            $P_Name=$my_row[P_Name$P_Name];
-            $PPP_ID=$my_row[PPP_ID$PPP_ID];
-            $Quantity=$my_row[Quantity$Quantity];
+            $P_Name=$my_row[P_Name];
+            $PPP_ID=$my_row[PPP_ID];
+            $Quantity=$my_row[Quantity];
             $Price=$my_row[Price];
             $PriceAddPerColor=$my_row[PriceAddPerColor];
             $RateList[]=new PPPOrder($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor);
@@ -64,9 +64,9 @@ class RateModel{
         while($my_row=$result->fetch_assoc())
         {
             $Product_ID=$my_row[Product_ID];
-            $P_Name=$my_row[P_Name$P_Name];
-            $PPP_ID=$my_row[PPP_ID$PPP_ID];
-            $Quantity=$my_row[Quantity$Quantity];
+            $P_Name=$my_row[P_Name];
+            $PPP_ID=$my_row[PPP_ID];
+            $Quantity=$my_row[Quantity];
             $Price=$my_row[Price];
             $PriceAddPerColor=$my_row[PriceAddPerColor];
             $RateList[]=new PPPOrder($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor);
