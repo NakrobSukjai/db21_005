@@ -1,5 +1,8 @@
 <?php
-    $controllers =array('pages'=>['home','error'],'billdetail'=>['index','newBilldetail','addBilldetail','searchBilldetail','updateFormBilldetail','updateBilldetail','deleteConfirmBilldetail','deleteBilldetail']);
+    $controllers =array('pages'=>['home','error'],
+                        'billdetail'=>['index','newBilldetail','addBilldetail','searchBilldetail','updateFormBilldetail','updateBilldetail','deleteConfirmBilldetail','deleteBilldetail']
+                        ,'bill' =>['index']
+                        ,'Rate' ->[]);
 
     function call($controller,$action)
     {
