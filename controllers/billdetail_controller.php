@@ -29,7 +29,11 @@ class BillDetailController
     public function updateFormBilldetail()
     {
         $billid=$_GET['Bill_ID'];
-        $billdetail=BillDetail::get($billid);
+        $productid=$_GET['Product_ID'];
+        $colorid=$_GET['Color_ID'];
+        $quantity=$_GET['Quantity'];
+        $numcolor=$_GET['numcolor'];
+        $billdetail=BillDetail::get($billid,$productid,$colorid,$quantity,$numcolor);
         $productcolorList=ProductColors::getAll();
         require_once('views/billdetail/updateFormBilldetail.php');
     }
@@ -46,13 +50,21 @@ class BillDetailController
     public function deleteConfirmBilldetail()
     {
         $billid=$_GET['Bill_ID'];
-        $billdetail=BillDetail::get($billid);
+        $productid=$_GET['Product_ID'];
+        $colorid=$_GET['Color_ID'];
+        $quantity=$_GET['Quantity'];
+        $numcolor=$_GET['numcolor'];
+        $billdetail=BillDetail::get($billid,$productid,$colorid,$quantity,$numcolor);
         require_once('views/billdetail/deleteConfirmBilldetail.php');
     }
     public function deleteBilldetail()
     {
-        $id=$_GET['Bill_ID'];
-        BillDetail::delete($id);
+        $billid=$_GET['Bill_ID'];
+        $productid=$_GET['Product_ID'];
+        $colorid=$_GET['Color_ID'];
+        $quantity=$_GET['Quantity'];
+        $numcolor=$_GET['numcolor'];
+        BillDetail::delete($billid,$productid,$colorid,$quantity,$numcolor);
         BillDetailController::index();
     }
 }
