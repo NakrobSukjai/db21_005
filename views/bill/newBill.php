@@ -6,11 +6,10 @@
         <?php
             foreach ($empList as $emp) 
             {
-               echo"<tr><td>$emp->emp_name</td></tr>";
-            }
-            echo "</table>";
+                {echo "<option value=$emp->emp_name>$emp->emp_name</option>";}
+            }      
         ?>
-        </select></label><br>
+        </select></label><br>;
     
     <input type ="hidden" name="controller" value="bill">
     <button type = "submit" name ="action" value="addBill">Save</button>
