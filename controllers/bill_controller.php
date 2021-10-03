@@ -14,7 +14,21 @@ class BillController
         require_once('views/bill/newBill.php');
     }
 
+    public function addBill()
+    {
+        $Bill_ID = $_GET['BILL_ID'];
+        $Date = $_GET['Date'];
+        $Customer = $_GET['C_name'];
+        $Emp = $_GET['E_name'];
 
+        Bill::Add($Bill_ID,$Date,$Customer,$Emp);
+        BillController::index();
+
+
+
+
+
+    }
 
 
 }
