@@ -11,7 +11,7 @@ New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]
 <form method="get" action="">
     <input type="text" name="key">
     <input type="hidden" name="controller" value="billdetail"/>
-    <button type="submit" name="action" value="search">Search</button>
+    <button type="submit" name="action" value="searchBilldetail">Search</button>
 </form>
 <?php
     foreach($billdetailList as $billdetail)
@@ -25,7 +25,8 @@ New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]
         <td>$billdetail->numcolor</td>
         <td><a href=?controller=billdetail&action=updateFormBilldetail&Bill_ID=$billdetail->billid>update</td>
         <td><a href=?controller=billdetail&action=deleteConfirmBilldetail&Bill_ID=$billdetail->billid>delete</td>
-        "
+        </tr>
+        ";
     }
     echo "</table>";
 ?>
