@@ -36,6 +36,12 @@ class Bill
 
     }
 
+    public Add($billid , $date , $cus , $emp)
+    {
+        
+
+    }
+
 
 }
 ?>
