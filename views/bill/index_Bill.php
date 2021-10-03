@@ -17,7 +17,6 @@ new bill [<a href="?controller=bill&action=newBill">click</a>]<br>
         <td>$bill->P_Name</td>
         <td>$bill->emp_name</td>
         <td>$bill->cus_name</td>
-        <td>$bill->cus_name</td>
         <td>update</td>
         <td>delete</td>
         ";
