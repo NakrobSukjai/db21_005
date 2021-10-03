@@ -16,7 +16,7 @@ class Product{
         {
             $P_ID=$my_row[Product_ID];
             $P_Name=$my_row[P_Name];
-            $productList[]=new ProductColors($P_ID,$P_Name);
+            $productList[]=new Product($P_ID,$P_Name);
         }
         require("connection_close.php");
         return $productList;
