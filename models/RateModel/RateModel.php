@@ -58,7 +58,7 @@ class RateModel{
         require("connection_connect.php");
         $sql = "SELECT * FROM PPPOrders
         INNER JOIN PPPOrders ON Product.Product_ID = PPPOrders.Product_ID
-        WHERE(PPPOrders.Product_ID like '%$key%' or PPPOrders.PPP_id like '%$key%' or PPPOrders.Quantity like '%$key%' or PPPOrders.Price like '%$key%' or PPPOrders.PriceAddPerColor like '%$key%')
+        WHERE(PPPOrders.Product_ID like '%$key%' or PPPOrders.PPP_ID like '%$key%' or PPPOrders.Quantity like '%$key%' or PPPOrders.Price like '%$key%' or PPPOrders.PriceAddPerColor like '%$key%')
         ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
