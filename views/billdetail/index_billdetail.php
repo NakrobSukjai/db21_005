@@ -23,8 +23,8 @@ New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]
         <td>$billdetail->colorname</td>
         <td>$billdetail->quantity</td>
         <td>$billdetail->numcolor</td>
-        <td><a href=?controller=billdetail&action=updateFormBilldetail&Bill_ID=$billdetail->billid>update</td>
-        <td><a href=?controller=billdetail&action=deleteConfirmBilldetail&Bill_ID=$billdetail->billid>delete</td>
+        <td><a href=?controller=billdetail&action=updateFormBilldetail&Bill_ID=$billdetail->billid&Product_ID=$billdetail->productid&Color_ID=$billdetail->colorid&Quantity=$billdetail->quantity&numcolor=$billdetail->numcolor>update</td>
+        <td><a href=?controller=billdetail&action=deleteConfirmBilldetail&Bill_ID=$billdetail->billid&Product_ID=$billdetail->productid&Color_ID=$billdetail->colorid&Quantity=$billdetail->quantity&numcolor=$billdetail->numcolor>delete</td>
         </tr>
         ";
     }
