@@ -1,4 +1,4 @@
-<form method="get" action="">
+<!-- <form method="get" action="">
 <label>ProductName <select name="Product_ID">
     <?php foreach($productList as $pro){
         echo "<option value = $pro->productid>
@@ -21,5 +21,5 @@
     <input type="hidden" name="lastPriceAddPerColor" value="<?php echo $Rate->priceaddpercolor;?>"/>
     <button type="submit" name="action" value="updateRate">update</button>
     <button type="submit" name="action" value="index">Back</button>
-    </form>
+    </form> -->
         
