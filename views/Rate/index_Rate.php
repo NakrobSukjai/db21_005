@@ -9,11 +9,7 @@
 <td>Update</td>
 <td>Delete</td>
 New Rate [<a href="?controller=Rate&action=newRate">click</a>]<br>
-<!-- <form method="get" action="">
-    <input type="text" name="key">
-    <input type="hidden" name="controller" value="Rate"/>
-    <button type="submit" name="action" value="searchRate">Search</button>
-</form> -->
+
 <?php
     foreach($RateList as $Rate)
     {
@@ -24,8 +20,8 @@ New Rate [<a href="?controller=Rate&action=newRate">click</a>]<br>
         <td>$Rate->quantity</td>
         <td>$Rate->price</td>
         <td>$Rate->priceaddpercolor</td>
-        <td><a href=?controller=Rate&action=updateFormRate&Product_ID=$Rate->productid&PPP_ID=$Rate->rateid&Quantity=$Rate->quantity&Price=$Rate->price&PriceAddPerColor=$Rate->priceaddpercolor>update</td>
-        <td><a href=?controller=Rate&action=deleteConfirmRate&Product_ID=$Rate->productid&PPP_ID=$Rate->rateid&Quantity=$Rate->quantity&Price=$Rate->price&PriceAddPerColor=$Rate->priceaddpercolor>delete</td>
+        <td>update</td>
+        <td>delete</td>
         </tr>
         ";
     }
