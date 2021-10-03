@@ -19,6 +19,7 @@ class Bill
         $sql = "SELECT * from Bill as b
         INNER JOIN Employees as emp ON emp.EMP_ID = b.EMP_ID
         INNER JOIN Customer as cus ON cus.Customer_ID = b.Customer_ID
+        INNER JOIN PaymentCondition as pay ON pay.Pay_ID = b.Pay_ID
         ORDER BY b.Bill_ID ASC";
         $result = $conn -> query($sql);
         while($my_row = $result->fetch_assoc())
