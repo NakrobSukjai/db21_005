@@ -9,11 +9,11 @@
 <td>Update</td>
 <td>Delete</td>
 New Rate [<a href="?controller=Rate&action=newRate">click</a>]<br>
-<form method="get" action="">
+<!-- <form method="get" action="">
     <input type="text" name="key">
     <input type="hidden" name="controller" value="Rate"/>
     <button type="submit" name="action" value="searchRate">Search</button>
-</form>
+</form> -->
 <?php
     foreach($RateList as $Rate)
     {
