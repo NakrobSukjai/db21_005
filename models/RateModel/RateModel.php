@@ -20,13 +20,14 @@ class Rate{
     {
         $RateList=[];
         require("connection_connect.php");
-        $sql = "SELECT * FROM PPPOrders
+        $sql = "SELECT Product.Product_ID as p ,PPP_ID,Quantity,Price,PriceAddPerColor 
+        FROM PPPOrders
         INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
         ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
         {
-            $Product_ID=$my_row[Product_ID];
+            $Product_ID=$my_row[p];
             $P_Name=$my_row[P_Name];
             $PPP_ID=$my_row[PPP_ID];
             $Quantity=$my_row[Quantity];
