@@ -4,12 +4,12 @@
     <label>ลูกค้า <input type = "text" name="C_name"/></label><br>
     <label>พนักงาน <select name = "E_name">
         <?php
-        foreach($empList as $emp)
-        {
-            echo "<option value = $emp->emp_name></option>";
-        }
+            foreach ($empList as $emp) 
+            {
+                {echo "<option value=$emp->emp_name>$emp->emp_name</option>";}
+            }      
         ?>
-        </select></label><br>
+        </select></label><br>;
     
     <input type ="hidden" name="controller" value="bill">
     <button type = "submit" name ="action" value="addBill">Save</button>
