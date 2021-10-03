@@ -19,11 +19,11 @@
         echo "<option value = $pro->productid>
         $pro->productname</option>";}?>
     </select></label><br>
-    <label>สินค้า <select name="Color_ID">
-    <?php foreach($productcolorList as $pro){
-        echo "<option value = $pro->colorid>
-        $pro->colorname</option>";}?>
-    </select></label><br>
+
+    <label>สีของสินค้า <select name="Color_ID">
+        <?php foreach($colorList as $color)
+        {echo "<option value=$color->colorid>$color->colorname</option>";}?>
+        </select></label><br>
     <label>จำนวนสินค้า <input type="number" name="Quantity"/></label><br>
     <label>จำนวนสีที่ต้องการ <input type="number" name="numcolor"/></label><br>
     <input type="hidden" name="controller" value="billdetail"/>
