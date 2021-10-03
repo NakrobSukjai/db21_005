@@ -18,6 +18,16 @@
                             require_once("models/billdetailModel/billModel.php");
                             $controller=new BillDetailController();
                             break;
+            case "bill" : require_once("models/billModel/billModel.php");
+                        require_once("models/billModel/customerModel.php");
+                        require_once("models/billModel/employeesModel.php");
+                        $controller = new BillController();
+                        break;
+            
+            case "Rate" : 
+            
+                        
+
         }
         $controller->{$action}();
     }
