@@ -9,6 +9,7 @@ class BillDetailController
     public function newBilldetail()
     {
         $productcolorList=ProductColors::getAll();
+        $colorList=Color::getAll();
         require_once("views/billdetail/newBilldetail.php");
     }
     public function addBilldetail()
