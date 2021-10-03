@@ -24,7 +24,7 @@ class Employees
         require("connection_close.php");
         return $empList ;
     }
-    
+
 
 
 
