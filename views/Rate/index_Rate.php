@@ -17,7 +17,7 @@ New Rate [<a href="?controller=Rate&action=newRate">click</a>]<br>
         <tr><td>$Rate->productid</td>
         <td>$Rate->productname</td>
         <td>$Rate->rateid</td>
-        <td>$Rate->quantity</td>
+        <td>$Rate->Quantity</td>
         <td>$Rate->price</td>
         <td>$Rate->priceaddpercolor</td>
         <td>update</td>
