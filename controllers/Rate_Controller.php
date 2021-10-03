@@ -8,7 +8,6 @@ class RateController
     }
     public function newRate()
     {
-        $RateList = RateModel::getAll();
         $productList=Product::getAll();
         require_once("views/Rate/newRate.php");
     }
