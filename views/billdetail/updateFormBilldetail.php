@@ -2,7 +2,7 @@
     <label>รหัสใบสั่งซื้อ <select name="Bill_ID">
         <?php foreach($quotation_list as $quotation){
           echo "<option value = $quotation->Q_ID";
-          if($quotation->Q_ID=$billdetail->Qid){echo " selected='selected'";}
+          if($quotation->Q_ID==$billdetail->billid){echo " selected='selected'";}
           echo ">$quotation->Q_ID</option>";
         }?>
     </select></label><br>
@@ -10,7 +10,7 @@
     <label>สินค้าและสีที่ต้องการ <select name="Product_ID">
         <?php foreach($productcolorList as $pro){
         echo "<option value = $pro->productid";
-        if($pro->productid=$billdetail->productid){echo " selected='selected'";}
+        if($pro->productid==$billdetail->productid & $pro->colorid==$billdetail->colorid){echo " selected='selected'";}
         echo ">$pro->productname $pro->colorname</option>";
         }?>
     </select></label><br>
