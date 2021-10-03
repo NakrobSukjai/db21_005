@@ -43,4 +43,16 @@ class BillDetailController
         BillDetail::update($billid,$productid,$colorid,$quantity,$numcolor);
         BillDetailController::index();
     }
+    public function deleteConfirmBilldetail()
+    {
+        $billid=$_GET['Bill_ID'];
+        $billdetail=BillDetail::get($billid);
+        require_once('views/billdetail/deleteConfirmBilldetail.php');
+    }
+    public function deleteBilldetail()
+    {
+        $id=$_GET['Bill_ID'];
+        BillDetail::delete($id);
+        BillDetailController::index();
+    }
 }
