@@ -32,7 +32,7 @@ class Rate{
             $Quantity=$my_row[Quantity];
             $Price=$my_row[Price];
             $PriceAddPerColor=$my_row[PriceAddPerColor];
-            $RateList[]=new RateModel($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor);
+            $RateList[]=new Rate($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor);
         }
         require("connection_close.php");
         return $RateList;
