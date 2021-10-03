@@ -2,7 +2,7 @@
     $controllers =array('pages'=>['home','error'],
                         'billdetail'=>['index','newBilldetail','addBilldetail','searchBilldetail','updateFormBilldetail','updateBilldetail','deleteConfirmBilldetail','deleteBilldetail']
                         ,'bill' =>['index']
-                        ,'Rate' ->[]);
+                        ,'Rate' ->['index','newRate','addRate','searchRate','updateFormRate','updateRate','deleteConfirmRate','deleteRate']);
 
     function call($controller,$action)
     {
@@ -24,9 +24,10 @@
                         $controller = new BillController();
                         break;
             
-            case "Rate" : 
-            
-                        
+            case "Rate" :   require_once("models/RateModel/RateModel.php");
+                            require_once("models/RateModel/ProductModel.php");
+                            $controller=new BillDetailController();
+                            break;         
 
         }
         $controller->{$action}();
