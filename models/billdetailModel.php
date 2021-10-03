@@ -68,4 +68,39 @@ class BillDetail
         require("connection_close.php");
         return $billdetailList;
     }
+    public static function get($id)
+    {
+        require("connection_connect.php");
+        $sql ="SELECT * FROM BillDetail
+        INNER JOIN Product ON Product.Product_ID=BillDetail.Product_ID
+        INNER JOIN Colors ON Colors.Color_ID=BillDetail.Color_ID
+        where Bill_ID='$id'
+        ORDER BY `BillDetail`.`Bill_ID` ASC";
+        $result=$conn->query($sql);
+        $my_row=$result->fetch_assoc();
+        $Bill_ID=$my_row[Bill_ID];
+        $Product_ID=$my_row[Product_ID];
+        $P_Name=$my_row[P_Name];
+        $Color=$my_row[Color_ID];
+        $colorname=$my_row[C_Name];
+        $Quantity=$my_row[Quantity];
+        $numcolor=$my_row[numcolor];
+        return new BillDetail($Bill_ID,$Product_ID,$P_Name,$Color,$colorname,$Quantity,$numcolor);
+    }
+    public static function update($billid,$productid,$colorid,$quantity,$numcolor)
+    {
+        require("connection_connect.php");
+        $sql="UPDATE BillDetail SET Bill_ID='$billid',Product_ID='$productid',Color_ID='$colorid',Quantity='$quantity',numcolor='$numcolor' WHERE BillDetail.Bill_ID='$billid'";
+        $result=$conn->query($sql);
+        require("connection_close.php");
+        return "update success $result row";
+    }
+    public static function delete($id)
+    {
+        require("connection_connect.php");
+        $sql="Delete from BillDetail Where BillDetail.Bill_ID='$id'";
+        $result=$conn->query($sql);
+        require("connection_close.php");
+        return "delete success $result row";
+    }
 }
