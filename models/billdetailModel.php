@@ -68,13 +68,13 @@ class BillDetail
         require("connection_close.php");
         return $billdetailList;
     }
-    public static function get($id)
+    public static function get($id,$productid,$colorid,$quantity,$numcolor)
     {
         require("connection_connect.php");
         $sql ="SELECT * FROM BillDetail
         INNER JOIN Product ON Product.Product_ID=BillDetail.Product_ID
         INNER JOIN Colors ON Colors.Color_ID=BillDetail.Color_ID
-        where Bill_ID='$id'
+        where BillDetail.Bill_ID='$id' AND BillDetail.Product_ID='$productid' AND BillDetail.Color_ID='$colorid' AND BillDetail.Quantity=$quantity AND numcolor=$numcolor
         ORDER BY `BillDetail`.`Bill_ID` ASC";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
@@ -90,15 +90,15 @@ class BillDetail
     public static function update($billid,$productid,$colorid,$quantity,$numcolor)
     {
         require("connection_connect.php");
-        $sql="UPDATE BillDetail SET Bill_ID='$billid',Product_ID='$productid',Color_ID='$colorid',Quantity='$quantity',numcolor='$numcolor' WHERE BillDetail.Bill_ID='$billid'";
+        $sql="UPDATE BillDetail SET Bill_ID='$billid',Product_ID='$productid',Color_ID='$colorid',Quantity='$quantity',numcolor='$numcolor' WHERE BillDetail.Bill_ID='$billid' AND BillDetail.Product_ID='$productid' AND BillDetail.Color_ID='$colorid' AND BillDetail.Quantity=$quantity AND numcolor=$numcolor";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
     }
-    public static function delete($id)
+    public static function delete($id,$productid,$colorid,$quantity,$numcolor)
     {
         require("connection_connect.php");
-        $sql="Delete from BillDetail Where BillDetail.Bill_ID='$id'";
+        $sql="Delete from BillDetail where BillDetail.Bill_ID='$id' AND BillDetail.Product_ID='$productid' AND BillDetail.Color_ID='$colorid' AND BillDetail.Quantity=$quantity AND numcolor=$numcolor";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "delete success $result row";
