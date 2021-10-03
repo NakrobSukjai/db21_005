@@ -7,7 +7,7 @@
 <td>RatePrice</td>
 <td>PriceAddPerColor</td>
 
-New Rate [<a href="?controller=Rate&action=newRate">click</a>]<br>
+
 
 <?php
     foreach($RateList as $Rate)
