@@ -3,7 +3,7 @@
         <?php foreach($billdetailList as $billdetail)
         {echo "<option value=$billdetail->billid>$billdetail->billid</option>";}?>
         </select></label><br>
-    <label>ProductID <select name="procID">
+    <label>สินค้าและสีที่ต้องการ <select name="Product_ID">
     <?php foreach($productcolorList as $pro){
         echo "<option value = $pro->productid>
         $pro->productname $pro->colorname</option>";}?>
