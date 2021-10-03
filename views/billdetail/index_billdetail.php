@@ -1,4 +1,3 @@
-
 <table border="1">
 <tr><td>BillID</td>
 <td>ProductID</td>
@@ -26,6 +25,7 @@ New BillDetail [<a href="?controller=billdetail&action=newBilldetail">click</a>]
         <td>$billdetail->numcolor</td>
         <td><a href=?controller=billdetail&action=updateFormBilldetail&Bill_ID=$billdetail->billid>update</td>
         <td><a href=?controller=billdetail&action=deleteConfirmBilldetail&Bill_ID=$billdetail->billid>delete</td>
+        "
     }
     echo "</table>";
 ?>
