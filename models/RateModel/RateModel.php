@@ -3,33 +3,33 @@ class RateModel{
     public $productid;
     public $productname;
     public $rateid;
-    public $quantity;
+    public $Quantity;
     public $price;
     public $priceaddpercolor;
 
-    public function __construct($Product_ID,$Product_Name,$Rate_ID,$Rate_Quantity,$Rate_Price,$Rate_Priceaddpercolor){
+    public function __construct($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor){
         $this->productid = $Product_ID;
-        $this->productname = $Product_Name;
-        $this->rateid = $Rate_ID;
-        $this->quantity = $Rate_Quantity;
-        $this->price = $Rate_Price;
-        $this->priceaddpercolor = $Rate_Priceaddpercolor;
+        $this->productname = $P_Name;
+        $this->rateid = $PPP_ID;
+        $this->Quantity = $Quantity;
+        $this->price = $Price;
+        $this->priceaddpercolor = $PriceAddPerColor;
     }
-    public static function get($pid,$rid,$quantity,$rprice,$priceaddpercolor){
+    public static function get($pid,$rid,$Quantity,$rprice,$priceaddpercolor){
         require("connection_connect.php");
         $sql = "SELECT * FROM PPPOrder
         INNER JOIN PPPOrders ON Product.Product_ID = PPPOrders.Product_ID
-        WHERE PPPOrders.Product_ID = '$pid' AND PPPOrders.PPP_id = '$rid' AND PPPOrders.Quantity = '$quantity' AND PPPOrders.Price = '$rprice' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
+        WHERE PPPOrders.Product_ID = '$pid' AND PPPOrders.PPP_id = '$rid' AND PPPOrders.Quantity = '$Quantity' AND PPPOrders.Price = '$rprice' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
         ORDER BY PPPOrder.Product_ID ASC";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         $Product_ID=$my_row[Product_ID];
-        $Product_Name=$my_row[Product_Name];
-        $Rate_ID=$my_row[Rate_ID];
-        $Rate_Quantity=$my_row[Rate_Quantity];
-        $Rate_Price=$my_row[Rate_Price];
-        $Rate_Priceaddpercolor=$my_row[Rate_Priceaddpercolor];
-        return new PPPOrder($Product_ID,$Product_Name,$Rate_ID,$Rate_Quantity,$Rate_Price,$Rate_Priceaddpercolor);
+        $P_Name=$my_row[P_Name$P_Name];
+        $PPP_ID=$my_row[PPP_ID$PPP_ID];
+        $Quantity=$my_row[Quantity$Quantity];
+        $Price=$my_row[Price];
+        $PriceAddPerColor=$my_row[PriceAddPerColor];
+        return new PPPOrder($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor);
     }
     public static function getAll()
     {
@@ -42,12 +42,12 @@ class RateModel{
         while($my_row=$result->fetch_assoc())
         {
             $Product_ID=$my_row[Product_ID];
-            $Product_Name=$my_row[Product_Name];
-            $Rate_ID=$my_row[Rate_ID];
-            $Rate_Quantity=$my_row[Rate_Quantity];
-            $Rate_Price=$my_row[Rate_Price];
-            $Rate_Priceaddpercolor=$my_row[Rate_Priceaddpercolor];
-            $RateList[]=new PPPOrder($Product_ID,$Product_Name,$Rate_ID,$Rate_Quantity,$Rate_Price,$Rate_Priceaddpercolor);
+            $P_Name=$my_row[P_Name$P_Name];
+            $PPP_ID=$my_row[PPP_ID$PPP_ID];
+            $Quantity=$my_row[Quantity$Quantity];
+            $Price=$my_row[Price];
+            $PriceAddPerColor=$my_row[PriceAddPerColor];
+            $RateList[]=new PPPOrder($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor);
         }
         require("connection_close.php");
         return $RateList;
@@ -64,12 +64,12 @@ class RateModel{
         while($my_row=$result->fetch_assoc())
         {
             $Product_ID=$my_row[Product_ID];
-            $Product_Name=$my_row[Product_Name];
-            $Rate_ID=$my_row[Rate_ID];
-            $Rate_Quantity=$my_row[Rate_Quantity];
-            $Rate_Price=$my_row[Rate_Price];
-            $Rate_Priceaddpercolor=$my_row[Rate_Priceaddpercolor];
-            $RateList[]=new PPPOrder($Product_ID,$Product_Name,$Rate_ID,$Rate_Quantity,$Rate_Price,$Rate_Priceaddpercolor);
+            $P_Name=$my_row[P_Name$P_Name];
+            $PPP_ID=$my_row[PPP_ID$PPP_ID];
+            $Quantity=$my_row[Quantity$Quantity];
+            $Price=$my_row[Price];
+            $PriceAddPerColor=$my_row[PriceAddPerColor];
+            $RateList[]=new PPPOrder($Product_ID,$P_Name,$PPP_ID,$Quantity,$Price,$PriceAddPerColor);
         }
         require("connection_close.php");
         return $RateList;
