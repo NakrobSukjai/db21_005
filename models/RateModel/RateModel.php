@@ -20,7 +20,7 @@ class RateModel{
         $sql = "SELECT * FROM PPPOrders
         INNER JOIN PPPOrders ON Product.Product_ID = PPPOrders.Product_ID
         WHERE PPPOrders.Product_ID = '$productid' AND PPPOrders.PPP_id = '$rateid' AND PPPOrders.Quantity = '$Quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
-        ORDER BY PPPOrder.Product_ID ASC";
+        ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         $Product_ID=$my_row[Product_ID];
@@ -59,7 +59,7 @@ class RateModel{
         $sql = "SELECT * FROM PPPOrders
         INNER JOIN PPPOrders ON Product.Product_ID = PPPOrders.Product_ID
         WHERE(PPPOrders.Product_ID like '%$key%' or PPPOrders.PPP_id like '%$key%' or PPPOrders.Quantity like '%$key%' or PPPOrders.Price like '%$key%' or PPPOrders.PriceAddPerColor like '%$key%')
-        ORDER BY PPPOrder.Product_ID ASC";
+        ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
         {
