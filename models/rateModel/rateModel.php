@@ -35,5 +35,15 @@ class Rate{
         require("connection_close.php");
         return $rateList;
 }
+
+    public static function Add($P_Name,$rateid,$quantity,$price,$priceaddpercolor)
+    {
+        require("connection_connect.php");
+        $sql="insert into PPPOrders(Product.P_Name,PPP_ID,Quantity,Price,PriceAddPerColor)values
+        ('$P_Name','$rateid','$quantity','$price','$priceaddpercolor')";
+        $result =$conn->query($sql);
+        require("connection_close.php");
+        return "add success $result rows";
+    }
 }
 ?>
