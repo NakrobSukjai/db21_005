@@ -1,8 +1,7 @@
 <form method="get" action="">
     <label>P_Name <select name="P_Name">
     <?php foreach($productList as $pro){
-        echo "<option value = $pro->productid>
-        $pro->P_Name</option>";}?>
+        echo "<option value = $pro->productid>$pro->P_Name</option>";}?>
     </select></label><br>
 
     <label>Rate_ID <input type="number" name="PPP_ID"/></label><br>
