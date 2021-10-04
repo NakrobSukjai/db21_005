@@ -54,7 +54,7 @@ class Bill
         INNER JOIN Employees as emp ON emp.EMP_ID = b.EMP_ID
         INNER JOIN Customer as cus ON cus.Customer_ID = b.Customer_ID
         INNER JOIN PaymentCondition as pay ON pay.Pay_ID = b.Pay_ID
-        WHERE (b.Bill_ID like '%$key%' or emp.E_Name like '%$key% or pay.Pay_Name like '%$key%'
+        WHERE (b.Bill_ID like '%$key%' or emp.E_Name like '%$key%' or pay.Pay_Name like '%$key%'
         or b.Date like '%$key%' or cus.C_Name like '%$key%')
         ORDER BY b.Bill_ID ASC";
         $result = $conn -> query($sql);
