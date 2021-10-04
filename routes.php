@@ -24,7 +24,8 @@
                         $controller = new BillController();
                         break;
 
-            case "Rate" :   require_once("models/RateModel/rateModel.php");
+            case "Rate" :   require_once("models/rateModel/rateModel.php");
+                            require_once("models/rateModel/productModel.php");
                             $controller=new RateController();
                             break;
 
