@@ -1,11 +1,22 @@
 <form method="get" action="">
-    <label>ProductName <select name="P_Name">
+    <label>ProductID <select name="P_Name">
         <?php foreach($productList as $pro){
         echo "<option value = $pro->productid";
         if($rate->productid==$pro->productid){echo " selected='selected'";}
         echo ">$pro->productid</option>";
         }?>
     </select></label><br>
+
+    <table border="1">
+    <tr><td>ProductID</td>
+    <td>ProductName</td>
+        <?php
+            foreach ($productList as $pro) {
+               echo"<tr><td>$pro->productid</td>
+                <td>$pro->P_Name</td></tr>";
+            }
+            echo "</table>";
+        ?>
 
 
     <label>Quantity <input type="number" name="Quantity"
