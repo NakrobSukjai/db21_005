@@ -11,6 +11,7 @@ class BillController
     {
         $CustomerList = Customer::getAll();
         $empList = Employees::getAll();
+        $billList = Bill::getAll();
         require_once('views/bill/newBill.php');
     }
 
