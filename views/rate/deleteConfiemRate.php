@@ -9,6 +9,6 @@
     <input type="hidden" name="Quantity" value="<?php echo $rate->quantity;?>"/>
     <input type="hidden" name="Price" value="<?php echo $rate->price;?>"/>
     <input type="hidden" name="priceaddpercolor" value="<?php echo $rate->priceaddpercolor;?>"/>
-    <button type="submit" name="action" value="deleteBilldetail">Delete</button>
+    <button type="submit" name="action" value="deleteRate">Delete</button>
     <button type="submit" name="action" value="index">Back</button>
 </form>
