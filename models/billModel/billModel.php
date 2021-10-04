@@ -36,11 +36,11 @@ class Bill
 
     }
 
-    public static function Add($billid , $date , $cus , $emp)
+    public static function Add($billid , $date , $pay , $cus , $emp)
     {
         require("connection_connect.php");
         $sql="insert into Bill(Bill_ID,Date,Customer,Employees)values
-        ('$billid','$date','$cus','$emp')";
+        ('$billid','$date','$pay','$cus','$emp')";
         $result =$conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
