@@ -32,7 +32,7 @@ class RateController{
 
     public function updateFormRate()
     {
-        $P_Name=$_GET['Product_ID'];
+        $P_Name=$_GET['P_Name'];
 
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
@@ -44,7 +44,7 @@ class RateController{
 
     public function updateRate()
     {
-        $P_Name=$_GET['Product_ID'];
+        $P_Name=$_GET['P_Name'];
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
         $priceaddpercolor=$_GET['PriceAddPerColor'];
