@@ -26,7 +26,7 @@ new bill [<a href="?controller=bill&action=newBill">click</a>]<br>
         <td>$bill->P_Name</td>
         <td>$bill->emp_name</td>
         <td>$bill->cus_name</td>
-        <td> <a href=?controller=bill&action=updateFormBill&Bill_ID=$bill->bill_id &Date=$bill->date &Pay_Name=$bill->P_Name &E_Name=$bill->emp_name &C_Name=$bill->cus_name> </td>
+        <td> <a href=?controller=bill&action=updateFormBill&Bill_ID=$bill->bill_id &Date=$bill->date &Pay_Name=$bill->P_Name &E_Name=$bill->emp_name &C_Name=$bill->cus_name>update </td>
         <td>delete</td>
         ";
     }
