@@ -18,10 +18,11 @@ class BillController
     {
         $Bill_ID = $_GET['BILL_ID'];
         $Date = $_GET['Date'];
+        $Pay_Name = $_GET['Pay_Name'];
         $Customer = $_GET['C_name'];
         $Emp = $_GET['E_name'];
 
-        Bill::Add($Bill_ID,$Date,$Customer,$Emp);
+        Bill::Add($Bill_ID,$Date,$Pay_Name,$Customer,$Emp);
         BillController::index();
     }
 
@@ -30,6 +31,16 @@ class BillController
         $key = $_GET['key'];
         $billList = Bill::search($key);
         require_once('views/bill/index_Bill.php');
+    }
+
+    public function updateForm()
+    {
+        $Bill_ID = $_GET['BILL_ID'];
+        $Date = $_GET['Date'];
+        $Pay_Name = $_GET['Pay_Name'];
+        $Customer = $_GET['C_name'];
+        $Emp = $_GET['E_name'];
+
     }
 
 
