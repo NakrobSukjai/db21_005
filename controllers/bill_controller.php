@@ -9,6 +9,8 @@ class BillController
     }
     public function newBill()
     {
+        $CustomerList = Customer::getAll();
+        $paymentList = payment::getpname();
         $empList = Employees::getALL();
         $billList = Bill::getAll();
         require_once('views/bill/newBill.php');
@@ -18,11 +20,11 @@ class BillController
     {
         $Bill_ID = $_GET['Bill_ID'];
         $Date = $_GET['Date'];
-        $Pay_Name = $_GET['Pay_Name'];
+        $Pay_Name = $_GET['P_Name'];
         $Customer = $_GET['C_name'];
         $Emp = $_GET['E_name'];
 
-        Bill::Add($Bill_ID,$Date,$Pay_Name,$Customer,$Emp);
+        Bill::Add($Bill_ID,$Date,$Pay_Name,$Emp,$Customer);
         BillController::index();
     }
 
