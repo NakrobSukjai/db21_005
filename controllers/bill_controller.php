@@ -38,14 +38,27 @@ class BillController
         $Bill_ID = $_GET['BILL_ID'];
         $Date = $_GET['Date'];
         $Pay_Name = $_GET['Pay_Name'];
-        $Customer = $_GET['C_name'];
-        $Emp = $_GET['E_name'];
+        $cus = $_GET['C_name'];
+        $emp = $_GET['E_name'];
 
         $empList = Employees::getALL();
         $CustomerList = Customer::getAll();
         $billList = Bill::getAll();
+        $billList = Bill::get($Bill_ID,$Date,$Pay_Name,$cus,$emp);
         require_once('views/bill/updateBill.php');
 
+    }
+
+    public function updateBill()
+    {
+        $Bill_ID = $_GET['BILL_ID'];
+        $Date = $_GET['Date'];
+        $Pay_Name = $_GET['Pay_Name'];
+        $cus = $_GET['C_name'];
+        $emp = $_GET['E_name'];
+
+        Bill::update($Bill_ID,$Date,$Pay_Name,$cus,$emp);
+        BillController::index();
     }
 
 
