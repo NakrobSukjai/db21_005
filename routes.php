@@ -2,7 +2,7 @@
     $controllers =array('pages'=>['home','error'],
                         'billdetail'=>['index','newBilldetail','addBilldetail','searchBilldetail','updateFormBilldetail','updateBilldetail','deleteConfirmBilldetail','deleteBilldetail']
                         ,'bill' =>['index','newBill','addBill']
-                        ,'rate' =>['index','newRate','addRate','searchRate']);
+                        ,'rate' =>['index','newRate','addRate','searchRate','updateFormRate','updateRate']);
 
     function call($controller,$action)
     {
