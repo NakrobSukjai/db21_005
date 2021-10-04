@@ -1,7 +1,7 @@
 <form method="get" action="">
-    <label>ProductID <select name="Product_ID">
+    <label>ProductID <select name="P_Name">
     <?php foreach($productList as $pro){
-        echo "<option value = $pro->P_Name>$pro->productid</option>";}?>
+        echo "<option value = $pro->productid>$pro->P_Name</option>";}?>
     </select></label><br>
     <table border="1">
     <tr><td>ProductID</td>
