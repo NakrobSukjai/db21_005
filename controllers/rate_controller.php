@@ -31,5 +31,33 @@ class RateController{
         require_once('views/rate/index_Rate.php');
     }
 
+    public function updateFormRate()
+    {
+        $P_Name=$_GET['P_Name'];
+        $rateid=$_GET['PPP_ID'];
+        $quantity=$_GET['Quantity'];
+        $price=$_GET['Price'];
+        $priceaddpercolor=$_GET['PriceAddPerColor'];
+        $productList=Product::getAll();
+        $rate=Rate::get($P_Name,$rateid,$quantity,$price,$priceaddpercolor);
+        require_once('views/rate/updateFormRate.php');
+    }
+
+    public function updateRate()
+    {
+        $P_Name=$_GET['P_Name'];
+        $rateid=$_GET['Rate_ID'];
+        $quantity=$_GET['Quantity'];
+        $price=$_GET['Price'];
+        $priceaddpercolor=$_GET['lastPriceAddPerColor'];
+        $lastP_Name=$_GET['lastP_Name'];
+        $lastrateid=$_GET['lastPPP_ID'];
+        $lastquantity=$_GET['lastQuantity'];
+        $lastprice=$_GET['lastPrice'];
+        $lastpriceaddpercolor=$_GET['lastPriceAddPerColor'];
+        Rate::update($P_Name,$rateid,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastrateid,$lastquantity,$lastprice,$lastpriceaddpercolor);
+        RateController::index();
+    }
+
 }
 ?>
