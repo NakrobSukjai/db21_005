@@ -27,7 +27,7 @@ class RateController{
 
     public function searchRate(){
         $key=$_GET['key'];
-        $ratelist=Rate::search($key);
+        $rateList=Rate::search($key);
         require_once('views/rate/index_Rate.php');
     }
 
