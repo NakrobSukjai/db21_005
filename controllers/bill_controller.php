@@ -21,7 +21,7 @@ class BillController
         $Bill_ID = $_GET['Bill_ID'];
         $Date = $_GET['Date'];
         $Pay_Name = $_GET['P_Name'];
-        $Customer = $_GET['C_name'];
+        $Customer = $_GET['C_Name'];
         $Emp = $_GET['E_name'];
 
         Bill::Add($Bill_ID,$Date,$Pay_Name,$Emp,$Customer);
