@@ -33,6 +33,7 @@
         ?>
     </select></label><br>
     <input type="hidden" name = "controller" value ='bill'/>
-
+    <button type = "submit" name="action" value="index">Back</button>
+    <button type = "submit" name="action" value="updateBill">update</button>
 
 </form>
