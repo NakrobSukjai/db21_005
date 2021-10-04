@@ -35,5 +35,5 @@ class Rate{
         require("connection_close.php");
         return $rateList;
 }
-
-
+}
+?>
