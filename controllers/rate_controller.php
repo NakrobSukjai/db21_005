@@ -2,7 +2,7 @@
 class RateController{
      public function index()
     {
-        $billList=Bill::getAll();
+        $rateList=Rate::getAll();
         require_once('views/rate/index_Rate.php');
     }
 }
