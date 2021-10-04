@@ -41,6 +41,11 @@ class BillController
         $Customer = $_GET['C_name'];
         $Emp = $_GET['E_name'];
 
+        $empList = Employees::getALL();
+        $CustomerList = Customer::getAll();
+        $billList = Bill::getAll();
+        require_once('views/bill/updateBill.php');
+
     }
 
 

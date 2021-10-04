@@ -6,7 +6,7 @@
         <?php
             foreach($billList as $bill)
             {
-                {echo "<option value=$bill->P_Name>$bill->P_Name</option>";}
+                {echo "<option value=$bill->Pay_Name>$bill->Pay_Name</option>";}
             }
         ?>
     </select></label><br>
