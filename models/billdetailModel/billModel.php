@@ -16,7 +16,7 @@ class Bills
         while($my_row=$result->fetch_assoc())
         {
             $Bill_ID=$my_row[Bill_ID];
-            $billList[]=new Bill($Bill_ID);
+            $billList[]=new Bills($Bill_ID);
         }
         require("connection_close.php");
         return $billList;
