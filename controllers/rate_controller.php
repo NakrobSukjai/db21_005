@@ -61,7 +61,7 @@ class RateController{
         $productid=$_GET['Product_ID'];
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
-        $priceaddpercolor=$_GET['lastPriceAddPerColor'];
+        $priceaddpercolor=$_GET['PriceAddPerColor'];
         $rate=Rate::get($productid,$quantity,$price,$priceaddpercolor);
         require_once('views/rate/deleteConfirmRate.php');
     }
@@ -70,7 +70,7 @@ class RateController{
         $productid=$_GET['Product_ID'];
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
-        $priceaddpercolor=$_GET['lastPriceAddPerColor'];
+        $priceaddpercolor=$_GET['PriceAddPerColor'];
         Rate::delete($productid,$quantity,$price,$priceaddpercolor);
         RateController::index();
     }
