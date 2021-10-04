@@ -47,13 +47,12 @@ class RateController{
         $P_Name=$_GET['P_Name'];
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
-        $priceaddpercolor=$_GET['lastPriceAddPerColor'];
+        $priceaddpercolor=$_GET['PriceAddPerColor'];
         $lastP_Name=$_GET['lastP_Name'];
-        $lastrateid=$_GET['lastPPP_ID'];
         $lastquantity=$_GET['lastQuantity'];
         $lastprice=$_GET['lastPrice'];
         $lastpriceaddpercolor=$_GET['lastPriceAddPerColor'];
-        Rate::update($P_Name,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastrateid,$lastquantity,$lastprice,$lastpriceaddpercolor);
+        Rate::update($P_Name,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastquantity,$lastprice,$lastpriceaddpercolor);
         RateController::index();
     }
 
