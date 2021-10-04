@@ -1,9 +1,9 @@
 <?php
 class Product{
-    public $productid,$productname;
-    public function __construct($Product_ID,$P_Name)
+    public $productid,$P_Name;
+    public function __construct($productid,$P_Name)
     {
-        $this->productid=$Product_ID;
+        $this->productid=$productid;
         $this->P_Name=$P_Name;
     }
     public static function getAll()
