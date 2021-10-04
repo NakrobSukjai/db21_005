@@ -86,7 +86,7 @@ class Rate{
         $quantity=$my_row[Quantity];
         $price=$my_row[Price];
         $priceaddpercolor=$my_row[PriceAddPerColor];
-        return new Rate($productid,$P_Name,$quantity,$price,$priceaddpercolor);
+        return new Rate($productid,$P_Name,$rateid,$quantity,$price,$priceaddpercolor);
     }
 
     public static function update($P_Name,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastquantity,$lastprice,$lastpriceaddpercolor)
