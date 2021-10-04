@@ -58,7 +58,7 @@ class Bill
     public static function Add($billid , $date , $pay , $cus , $emp)
     {
         require("connection_connect.php");
-        $sql="insert into Bill(Bill_ID,Date,PaymentCondition,Customer,Employees)values
+        $sql="insert into Bill(Bill_ID,Date,Pay_Name,C_Name,E_Name)values
         ('$billid','$date','$pay','$cus','$emp')";
         $result =$conn->query($sql);
         require("connection_close.php");
@@ -95,16 +95,19 @@ class Bill
     public static function update($billid,$date,$pname,$cusname,$empname)
     {
         require("connection_connect.php");
-        $sql = "UPDATE Bill as b SET Bill_ID = '$billid' , Date = '$date' , PaymentCondition = '$pname' , Customer = '$cusname' , Employees = '$empname' ";
+        $sql = "UPDATE Bill SET Bill.Bill_ID = '$billid' , Bill.Date = '$date' , Bill.PaymentCondition = '$pname' , Bill.C_Name = '$cusname' , Bill.E_Name = '$empname' ";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
     }
     
-    public static function delete()
+    public static function delete($billid,$date,$pname,$empname,$cusname)
     {
         require_once("connection_connect.php");
-        $sql = "Delete from bill Where bill"
+        $sql = "DELETE FROM Bill where Bill_ID = '$billid' , Bill.Date = '$date' , Bill.Pay_Name = '$pname' , Bill.C_Name = '$cusname' , Bill.E_Name = '$empname'";
+        $result = $conn -> query ($sql);
+        require("connection_close.php");
+        return "delete success $result row";
 
     }
 
