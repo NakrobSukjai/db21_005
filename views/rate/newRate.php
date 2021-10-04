@@ -1,8 +1,18 @@
 <form method="get" action="">
-    <label>ProductName <select name="P_Name">
+    <label>ProductID <select name="Producr_ID">
     <?php foreach($productList as $pro){
         echo "<option value = $pro->productid>$pro->P_Name</option>";}?>
     </select></label><br>
+
+    <tr><td>ProductID</td>
+    <td>ProductName</td>
+        <?php
+            foreach ($productList as $pro) {
+               echo"<tr><td>$pro->productid</td>
+                <td>$pro->cP_Name</td></tr>";
+            }
+            echo "</table>";
+        ?>
 
 
     <label>Quantity <input type="number" name="Quantity"/></label><br>
