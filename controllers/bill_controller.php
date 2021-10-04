@@ -9,8 +9,7 @@ class BillController
     }
     public function newBill()
     {
-        $CustomerList = Customer::getAll();
-        $empList = Employees::getAll();
+        $empList = Employees::getALL();
         $billList = Bill::getAll();
         require_once('views/bill/newBill.php');
     }
