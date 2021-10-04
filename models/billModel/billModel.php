@@ -93,6 +93,16 @@ class Bill
 
     }
 
+    public static function update($billid,$date,$pname,$cusname,$empname)
+    {
+        require("connection_connect.php");
+        $sql = "UPDATE Bill as b SET b.Bill_ID = '$billid' , b.Date = '$date' , b.Pay_Name = '$pname' , b.C_Name = '$cusname' , b.E_Name = '$empname' ";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return "update success $result row";
+    }
+    
+
 
 }
 ?>
