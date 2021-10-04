@@ -32,13 +32,13 @@ class RateController{
 
     public function updateFormRate()
     {
-        $Productid=$_GET['Product_ID'];
+        $productid=$_GET['Product_ID'];
 
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
         $priceaddpercolor=$_GET['PriceAddPerColor'];
         $productList=Product::getAll();
-        $rate=Rate::get($Productid,$quantity,$price,$priceaddpercolor);
+        $rate=Rate::get($productid,$quantity,$price,$priceaddpercolor);
         require_once('views/rate/updateFormRate.php');
     }
 
