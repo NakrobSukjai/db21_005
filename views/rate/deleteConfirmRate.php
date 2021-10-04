@@ -1,4 +1,4 @@
-<?php echo "<br>Are you sure to delete this BillDetail <br>
+<?php echo "<br>Are you sure to delete this Rate? <br>
             <br>Product_ID:$rate->productid
             <br>Quantity:$rate->quantity
             <br>Price:$rate->price
