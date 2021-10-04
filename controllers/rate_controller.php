@@ -6,7 +6,7 @@ class RateController{
         require_once('views/rate/index_Rate.php');
     }
         public function newRate()
-        {
+    {
         $productList = Product::getAll();
         require_once('views/rate/newRate.php');
     }
