@@ -45,5 +45,47 @@ class Rate{
         require("connection_close.php");
         return "add success $result rows";
     }
+
+    public static function search($key)
+    {
+        $rateList=[];
+        require("connection_connect.php");
+        $sql = "SELECT Product.Product_ID , Product.P_Name , PPP_ID , Quantity , Price , PriceAddPerColor
+        FROM PPPOrders
+        INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
+        WHERE(PPPOrders.Product_ID like '%$key%' or Product.P_Name like '%$key%' or PPPOrders.PPP_ID like '%$key%' or PPPOrders.Quantity like '%$key%' or PPPOrders.Price like '%$key%' or PPPOrders.PriceAddPerColor like '%$key%')
+        ORDER BY PPPOrders.Product_ID ASC";
+        $result=$conn->query($sql);
+        while($my_row=$result->fetch_assoc())
+        {
+            $productid=$my_row[Product_ID];
+            $P_Name=$my_row[P_Name];
+            $rateid=$my_row[PPP_ID];
+            $quantity=$my_row[Quantity];
+            $price=$my_row[Price];
+            $priceaddpercolor=$my_row[PriceAddPerColor];
+            $rateList[]=new Rate($productid,$P_Name,$rateid,$quantity,$price,$priceaddpercolor);
+        }
+        require("connection_close.php");
+        return $rateList;
+
+    }
+
+    public static function get($productid,$rateid,$quantity,$price,$priceaddpercolor){
+        require("connection_connect.php");
+        $sql = "SELECT * FROM PPPOrders
+        INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
+        WHERE PPPOrders.Product_ID = '$productid' AND PPPOrders.PPP_id = '$rateid' AND PPPOrders.Quantity = '$Quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
+        ORDER BY PPPOrders.Product_ID ASC";
+        $result=$conn->query($sql);
+        $my_row=$result->fetch_assoc();
+        $productid=$my_row[Product_ID];
+        $P_Name=$my_row[P_Name];
+        $rateid=$my_row[PPP_ID];
+        $quantity=$my_row[Quantity];
+        $price=$my_row[Price];
+        $priceaddpercolor=$my_row[PriceAddPerColor];
+        return new Rate($productid,$P_Name,$PPP_ID,$quantity,$price,$priceaddpercolor);
+    }
 }
 ?>
