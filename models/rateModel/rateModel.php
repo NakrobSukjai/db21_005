@@ -36,11 +36,11 @@ class Rate{
         return $rateList;
 }
 
-    public static function Add($productid,$rateid,$quantity,$price,$priceaddpercolor)
+    public static function Add($productid,$quantity,$price,$priceaddpercolor)
     {
         require("connection_connect.php");
-        $sql="insert into PPPOrders(Product.Product_ID,PPP_ID,Quantity,Price,PriceAddPerColor)values
-        ('$productid','$rateid','$quantity','$price','$priceaddpercolor')";
+        $sql="insert into PPPOrders(PPPOrders.Product_ID,Quantity,Price,PriceAddPerColor)values
+        ('$productid','$quantity','$price','$priceaddpercolor')";
         $result =$conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
@@ -76,7 +76,7 @@ class Rate{
         $sql = "SELECT Product.Product_ID , PPP_ID , Quantity , Price , PriceAddPerColor
         FROM PPPOrders
         INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
-        WHERE Product.Product_ID = '$productid' AND PPPOrders.PPP_id = '$rateid' AND PPPOrders.Quantity = '$quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
+        WHERE Product.Product_ID = '$productid' AND PPPOrders.PPP_ID = '$rateid' AND PPPOrders.Quantity = '$quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
         ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
