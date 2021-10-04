@@ -15,7 +15,7 @@ class Rate{
 
     public static function getAll()
     {
-        $RateList=[];
+        $rateList=[];
         require("connection_connect.php");
         $sql = "SELECT Product.Product_ID , Product.P_Name , PPP_ID , Quantity , Price , PriceAddPerColor
         FROM PPPOrders
@@ -30,10 +30,10 @@ class Rate{
             $quantity=$my_row[Quantity];
             $price=$my_row[Price];
             $priceAddPerColor=$my_row[PriceAddPerColor];
-            $RateList[]=new Rate($productid,$P_Name,$rateid,$quantity,$price,$priceAddPerColor);
+            $rateList[]=new Rate($productid,$P_Name,$rateid,$quantity,$price,$priceAddPerColor);
         }
         require("connection_close.php");
-        return $RateList;
+        return $rateList;
 }
 
 
