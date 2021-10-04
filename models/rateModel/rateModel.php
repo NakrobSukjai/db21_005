@@ -73,7 +73,7 @@ class Rate{
 
     public static function get($productid,$rateid,$quantity,$price,$priceaddpercolor){
         require("connection_connect.php");
-        $sql = "SELECT SELECT Product.Product_ID , PPP_ID , Quantity , Price , PriceAddPerColor
+        $sql = "SELECT Product.Product_ID , PPP_ID , Quantity , Price , PriceAddPerColor
         FROM PPPOrders
         INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
         WHERE PPPOrders.Product_ID = '$productid' AND PPPOrders.PPP_id = '$rateid' AND PPPOrders.Quantity = '$quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
