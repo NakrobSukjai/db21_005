@@ -25,7 +25,7 @@ New Rate [<a href="?controller=rate&action=newRate">click</a>]<br>
         <td>$rate->price</td>
         <td>$rate->priceaddpercolor</td>
 
-        <td><a href=?controller=rate&action=updateFormRate&Product_ID=$rate->productid&Quantity=$rate->quantity&Price=$rate->price&PriceAddPerColor=$rate->priceaddpercolor>update</td>
+        <td><a href=?controller=rate&action=updateFormRate&P_Name=$rate->productid&Quantity=$rate->quantity&Price=$rate->price&PriceAddPerColor=$rate->priceaddpercolor>update</td>
         <td><a href=?controller=rate&action=deleteConfirmRate&Product_ID=$rate->productid&Quantity=$rate->quantity&Price=$rate->price&PriceAddPerColor=$rate->priceaddpercolor>delete</td>
         ";
     }
