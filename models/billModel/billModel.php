@@ -27,8 +27,7 @@ class Bill
         $Pay_Name = $my_row[Pay_Name];
         $E_Name = $my_row[E_Name];
         $C_Name = $my_row[C_Name];
-        $billList[] = new Bill($Bill_ID,$Date,$Pay_Name,$E_Name,$C_Name);
-        require("connection_close.php");
+        
         return new Bill($Bill_ID,$Date,$Pay_Name,$E_Name,$C_Name);
     }
 
@@ -101,7 +100,7 @@ class Bill
         require("connection_close.php");
         return "update success $result row";
     }
-    
+
 
 
 }
