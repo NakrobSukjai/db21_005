@@ -1,5 +1,5 @@
 <?php
-class Product{
+class Products{
     public $productid,$productname;
     public function __construct($P_ID,$P_Name)
     {
