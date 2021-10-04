@@ -4,7 +4,7 @@
         echo "<option value = $pro->productid>$pro->P_Name</option>";}?>
     </select></label><br>
 
-    <label>Rate_ID <input type="number" name="PPP_ID"/></label><br>
+
     <label>Quantity <input type="number" name="Quantity"/></label><br>
     <label>RatePrice <input type="number" name="Price"/></label><br>
     <label>PriceAddPerColor <input type="number" name="PriceAddPerColor"/></label><br>
