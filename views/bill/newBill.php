@@ -9,8 +9,8 @@
                 {echo "<option value =$bill->P_Name>$bill->P_Name</option>";}
             }
         ?>
-    </select>
-    
+    </select></label><br>;
+
     <label>พนักงาน <select name = "E_name">
         <?php
             foreach ($empList as $emp) 
