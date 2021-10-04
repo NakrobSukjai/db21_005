@@ -11,7 +11,7 @@ class BillDetailController
         $productcolorList=ProductColors::getAll();
         $colorList=Color::getAll();
         $billList=Bill::getAll();
-        $productList=Product::getAll();
+        $productList=Products::getAll();
         require_once("views/billdetail/newBilldetail.php");
     }
     public function addBilldetail()
@@ -38,7 +38,7 @@ class BillDetailController
         $numcolor=$_GET['numcolor'];
         $colorList=Color::getAll();
         $billList=Bill::getAll();
-        $productList=Product::getAll();
+        $productList=Products::getAll();
         $billdetail=BillDetail::get($billid,$productid,$colorid,$quantity,$numcolor);
         $productcolorList=ProductColors::getAll();
         require_once('views/billdetail/updateFormBilldetail.php');
