@@ -1,6 +1,6 @@
 <?php
 
-class BillController 
+class BillController
 {
     public function index()
     {
