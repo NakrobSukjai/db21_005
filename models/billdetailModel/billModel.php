@@ -1,5 +1,5 @@
 <?php 
-class Bill
+class Bills
 {
     public $billid;
     public function __construct($Bill_ID)
