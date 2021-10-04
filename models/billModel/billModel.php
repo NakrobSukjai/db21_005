@@ -39,7 +39,7 @@ class Bill
     public static function Add($billid , $date , $pay , $cus , $emp)
     {
         require("connection_connect.php");
-        $sql="insert into Bill(Bill_ID,Date,Customer,Employees)values
+        $sql="insert into Bill(Bill_ID,Date,Pay_Name,Customer,Employees)values
         ('$billid','$date','$pay','$cus','$emp')";
         $result =$conn->query($sql);
         require("connection_close.php");

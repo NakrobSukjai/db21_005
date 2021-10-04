@@ -6,10 +6,10 @@
         <?php
             foreach($billList as $bill)
             {
-                {echo "<option value =$bill->P_Name>$bill->P_Name</option>";}
+                {echo "<option value=$bill->P_Name>$bill->P_Name</option>";}
             }
         ?>
-    </select></label><br>;
+    </select></label><br>
 
     <label>พนักงาน <select name = "E_name">
         <?php
@@ -18,7 +18,7 @@
                 {echo "<option value=$emp->emp_name>$emp->emp_name</option>";}
             }      
         ?>
-        </select></label><br>;
+        </select></label><br>
     
     <input type ="hidden" name="controller" value="bill">
     <button type = "submit" name ="action" value="addBill">Save</button>
