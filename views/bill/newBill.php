@@ -2,6 +2,15 @@
     <label>รหัสใบเสนอสินค้า <input type ="text" name="Bill_ID"/></label><br>
     <label>วันที่ <input type = "date" name = 'Date'/></label><br>
     <label>ลูกค้า <input type = "text" name="C_name"/></label><br>
+    <label>เงื่อนไขการจ่าย <select name = "Pay_Name">
+        <?php
+            foreach($billList as $bill)
+            {
+                {echo "<option value =$bill->P_Name>$bill->P_Name</option>";}
+            }
+        ?>
+    </select></label><br>;
+
     <label>พนักงาน <select name = "E_name">
         <?php
             foreach ($empList as $emp) 
