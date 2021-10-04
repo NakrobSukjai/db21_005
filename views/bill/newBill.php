@@ -3,7 +3,7 @@
     <label>วันที่ <input type = "date" name = 'Date'/></label><br>
     <label>ลูกค้า <input type = "text" name="C_name"/></label><br>
 
-    <label>เงื่อนไขการจ่าย <select name = "Pay_Name">
+    <label>เงื่อนไขการจ่าย <select name = "P_Name">
         <?php
             foreach($billList as $bill)
             {
@@ -11,7 +11,8 @@
                 echo "> $bill->Pay_Name </option>";
             }
         ?>
-    </select></label><br>
+        </select>
+    </label><br>
 
     <label>พนักงาน <select name = "E_name">
         <?php
@@ -20,7 +21,8 @@
                 echo "<option value=$emp->emp_name> $emp->emp_name </option>";
             }      
         ?>
-        </select></label><br>
+        </select>
+    </label><br>
     
     <input type ="hidden" name="controller" value="bill"/>
     <button type = "submit" name ="action" value="addBill">Save</button>
