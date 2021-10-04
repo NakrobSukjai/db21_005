@@ -35,14 +35,15 @@ class BillController
         require_once('views/bill/index_Bill.php');
     }
 
-    public function updateForm()
+    public function updateFormBill()
     {
         $Bill_ID = $_GET['Bill_ID'];
         $Date = $_GET['Date'];
-        $Pay_Name = $_GET['Pay_Name'];
+        $Pay_Name = $_GET['P_Name'];
         $cus = $_GET['C_name'];
         $emp = $_GET['E_name'];
 
+        $paymentList = payment::getpname();
         $empList = Employees::getALL();
         $CustomerList = Customer::getAll();
         $bill = Bill::get($Bill_ID,$Date,$Pay_Name,$emp,$cus);
