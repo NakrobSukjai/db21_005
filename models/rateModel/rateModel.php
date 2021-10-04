@@ -71,29 +71,28 @@ class Rate{
 
     }
 
-    public static function get($productid,$rateid,$quantity,$price,$priceaddpercolor){
+    public static function get($productid,$quantity,$price,$priceaddpercolor){
         require("connection_connect.php");
-        $sql = "SELECT Product.Product_ID , PPP_ID , Quantity , Price , PriceAddPerColor
+        $sql = "SELECT Product.Product_ID , Quantity , Price , PriceAddPerColor
         FROM PPPOrders
         INNER JOIN Product ON Product.Product_ID = PPPOrders.Product_ID
-        WHERE Product.Product_ID = '$productid' AND PPPOrders.PPP_ID = '$rateid' AND PPPOrders.Quantity = '$quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
+        WHERE Product.Product_ID = '$productid' AND PPPOrders.Quantity = '$quantity' AND PPPOrders.Price = '$price' AND PPPOrders.PriceAddPerColor = '$priceaddpercolor'
         ORDER BY PPPOrders.Product_ID ASC";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         $productid=$my_row[Product_ID];
         $P_Name=$my_row[P_Name];
-        $rateid=$my_row[PPP_ID];
         $quantity=$my_row[Quantity];
         $price=$my_row[Price];
         $priceaddpercolor=$my_row[PriceAddPerColor];
-        return new Rate($productid,$P_Name,$rateid,$quantity,$price,$priceaddpercolor);
+        return new Rate($productid,$P_Name,$quantity,$price,$priceaddpercolor);
     }
 
-    public static function update($P_Name,$rateid,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastrateid,$lastquantity,$lastprice,$lastpriceaddpercolor)
+    public static function update($productid,$quantity,$price,$priceaddpercolor,$lastproductid,$lastquantity,$lastprice,$lastpriceaddpercolor)
     {
         require("connection_connect.php");
-        $sql="UPDATE PPPOeders SET Product.P_Name='$P_Name',PPPOeders.PPP_ID='$rateid',PPPOeders.Quantity='$quantity',PPPOeders.Price=$price,PPPOeders.PriceAddPerColor=$priceaddpercolor
-        WHERE  Product.P_Name='$lastP_Name' AND PPPOeders.PPP_ID='$lastrateid' AND PPPOeders.Quantity='$lastquantity' AND PPPOeders.Price=$lastprice AND PriceAddPerColor=$lastpriceaddpercolor";
+        $sql="UPDATE PPPOeders SET Product.Prodduct_ID='$productid',PPPOeders.Quantity='$quantity',PPPOeders.Price=$price,PPPOeders.PriceAddPerColor=$priceaddpercolor
+        WHERE  Product.Product_ID='$lastproductid'  AND PPPOeders.Quantity='$lastquantity' AND PPPOeders.Price=$lastprice AND PriceAddPerColor=$lastpriceaddpercolor";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
