@@ -20,7 +20,7 @@
         ?>
         </select></label><br>
     
-    <input type ="hidden" name="controller" value="bill">
+    <input type ="hidden" name="controller" value="bill"/>
     <button type = "submit" name ="action" value="addBill">Save</button>
     <button type = "submit" name = "action" value ="index">Back</button>
 
