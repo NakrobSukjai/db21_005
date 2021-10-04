@@ -1,5 +1,5 @@
 <form method="get" action="">
-    <label>ProductID <select name="P_Name">
+    <label>ProductID <select name="Product_ID">
         <?php foreach($productList as $pro){
         echo "<option value = $pro->productid";
         if($rate->productid==$pro->productid){echo " selected='selected'";}
