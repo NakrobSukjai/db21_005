@@ -23,11 +23,6 @@ class BillController
 
         Bill::Add($Bill_ID,$Date,$Customer,$Emp);
         BillController::index();
-
-
-
-
-
     }
 
 
