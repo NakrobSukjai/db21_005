@@ -24,5 +24,12 @@ class RateController{
         RateController::index();
 
     }
+
+    public function searchRate(){
+        $key=$_GET['key'];
+        $RateList=Rate::search($key);
+        require_once('views/rate/index_Rate.php');
+    }
+
 }
 ?>
