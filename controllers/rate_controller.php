@@ -14,12 +14,12 @@ class RateController{
 
         public function addRate()
     {
-        $productid = $_GET['P_Name'];
+        $P_Name = $_GET['P_Name'];
         $quantity = $_GET['Quantity'];
         $price = $_GET['Price'];
         $priceaddpercolor = $_GET['PriceAddPerColor'];
 
-        Rate::Add($productid,$quantity,$price,$priceaddpercolor);
+        Rate::Add($P_Name,$quantity,$price,$priceaddpercolor);
         RateController::index();
 
     }
@@ -32,28 +32,28 @@ class RateController{
 
     public function updateFormRate()
     {
-        $productid=$_GET['P_Name'];
+        $P_Name=$_GET['P_Name'];
 
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
         $priceaddpercolor=$_GET['PriceAddPerColor'];
         $productList=Product::getAll();
-        $rate=Rate::get($productid,$quantity,$price,$priceaddpercolor);
+        $rate=Rate::get($P_Name,$quantity,$price,$priceaddpercolor);
         require_once('views/rate/updateFormRate.php');
     }
 
     public function updateRate()
     {
-        $productid=$_GET['P_Name'];
+        $P_Name=$_GET['P_Name'];
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
         $priceaddpercolor=$_GET['lastPriceAddPerColor'];
-        $lastproductid=$_GET['lastP_Name'];
+        $lastP_Name=$_GET['lastP_Name'];
         $lastrateid=$_GET['lastPPP_ID'];
         $lastquantity=$_GET['lastQuantity'];
         $lastprice=$_GET['lastPrice'];
         $lastpriceaddpercolor=$_GET['lastPriceAddPerColor'];
-        Rate::update($productid,$quantity,$price,$priceaddpercolor,$lastproductid,$lastrateid,$lastquantity,$lastprice,$lastpriceaddpercolor);
+        Rate::update($P_Name,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastrateid,$lastquantity,$lastprice,$lastpriceaddpercolor);
         RateController::index();
     }
 
