@@ -8,7 +8,7 @@
 <td>PriceAddPerColor</td>
 <td>Update</td>
 <td>Delete</td>
-<!-- new rate [<a href="?controller=rate&action=newRate">click</a>]<br> -->
+new rate [<a href="?controller=rate&action=newRate">click</a>]<br>
 <?php
     foreach($rateList as $rate)
     {
