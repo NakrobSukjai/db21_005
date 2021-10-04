@@ -21,6 +21,7 @@
             case "bill" : require_once("models/billModel/billModel.php");
                         require_once("models/billModel/customerModel.php");
                         require_once("models/billModel/employeesModel.php");
+                        require_once("models/billModel/paymentModel.php");
                         $controller = new BillController();
                         break;
 
