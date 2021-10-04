@@ -44,7 +44,7 @@ class RateController{
 
     public function updateRate()
     {
-        $Productid=$_GET['Product_ID'];
+        $productid=$_GET['Product_ID'];
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
         $priceaddpercolor=$_GET['PriceAddPerColor'];
@@ -52,7 +52,7 @@ class RateController{
         $lastquantity=$_GET['lastQuantity'];
         $lastprice=$_GET['lastPrice'];
         $lastpriceaddpercolor=$_GET['lastPriceAddPerColor'];
-        Rate::update($Productid,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastquantity,$lastprice,$lastpriceaddpercolor);
+        Rate::update($productid,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastquantity,$lastprice,$lastpriceaddpercolor);
         RateController::index();
     }
 
