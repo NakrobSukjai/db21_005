@@ -98,5 +98,15 @@ class Rate{
         require("connection_close.php");
         return "update success $result row";
     }
+
+
+    public static function delete($P_Name,$quantity,$price,$priceaddpercolor)
+    {
+        require("connection_connect.php");
+        $sql="DELETE FROM PPPOrders WHERE PPPOrders.Product_ID='$P_Name' AND PPPOrders.Quantity='$quantity' AND PPPOrders.Price=$price AND PPPOrders.PriceAddPerColor=$priceaddpercolor";
+        $result=$conn->query($sql);
+        require("connection_close.php");
+        return "delete success $result row";
+    }
 }
 ?>
