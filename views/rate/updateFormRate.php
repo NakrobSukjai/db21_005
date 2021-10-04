@@ -2,7 +2,7 @@
     <label>ProductName <select name="P_Name">
         <?php foreach($productList as $pro){
         echo "<option value = $pro->P_Name";
-        if($rate->P_Name==$rate->P_Name){echo " selected='selected'";}
+        if($rate->P_Name==$pro->P_Name){echo " selected='selected'";}
         echo ">$pro->P_Name</option>";
         }?>
     </select></label><br>
