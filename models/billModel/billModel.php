@@ -27,7 +27,7 @@ class Bill
         $Pay_Name = $my_row[Pay_Name];
         $E_Name = $my_row[E_Name];
         $C_Name = $my_row[C_Name];
-        
+
         return new Bill($Bill_ID,$Date,$Pay_Name,$E_Name,$C_Name);
     }
 
@@ -95,12 +95,18 @@ class Bill
     public static function update($billid,$date,$pname,$cusname,$empname)
     {
         require("connection_connect.php");
-        $sql = "UPDATE Bill as b SET b.Bill_ID = '$billid' , b.Date = '$date' , b.Pay_Name = '$pname' , b.C_Name = '$cusname' , b.E_Name = '$empname' ";
+        $sql = "UPDATE Bill as b SET Bill_ID = '$billid' , Date = '$date' , PaymentCondition = '$pname' , Customer = '$cusname' , Employees = '$empname' ";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
     }
+    
+    public static function delete()
+    {
+        require_once("connection_connect.php");
+        $sql = "Delete from bill Where bill"
 
+    }
 
 
 }
