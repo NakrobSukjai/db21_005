@@ -25,5 +25,12 @@ class BillController
         BillController::index();
     }
 
+    public function search()
+    {
+        $key = $_GET['key'];
+        $billList = Bill::search($key);
+        require_once('views/bill/index_Bill.php');
+    }
+
 
 }
