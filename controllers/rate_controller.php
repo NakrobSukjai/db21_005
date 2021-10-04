@@ -15,12 +15,11 @@ class RateController{
         public function addRate()
     {
         $P_Name = $_GET['P_Name'];
-        $rateid = $_GET['PPP_ID'];
         $quantity = $_GET['Quantity'];
         $price = $_GET['Price'];
         $priceaddpercolor = $_GET['PriceAddPerColor'];
 
-        Rate::Add($P_Name,$rateid,$quantity,$price,$priceaddpercolor);
+        Rate::Add($P_Name,$quantity,$price,$priceaddpercolor);
         RateController::index();
 
     }
