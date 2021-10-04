@@ -22,12 +22,17 @@
         <?php
             foreach ($empList as $emp) 
             {
-                {echo "<option value=$emp->emp_name>$emp->emp_name</option>";}
+                echo "<option value=$emp->emp_name";
+                if($emp->E_Name==$employees->$emp_name)
+                {
+                    echo "selected='selected'";
+                }
+                echo ">$emp->E_Name</option>";
+
             }      
         ?>
     </select></label><br>
     <input type="hidden" name = "controller" value ='bill'/>
-    <input type="hidden" name = 'lastBill_ID' value="<?php echo $bill->bill_id?>"
 
 
 </form>
