@@ -14,7 +14,7 @@ class RateController{
 
         public function addRate()
     {
-        $productid = $_GET['P_Name'];
+        $productid = $_GET['Product_ID'];
         $quantity = $_GET['Quantity'];
         $price = $_GET['Price'];
         $priceaddpercolor = $_GET['PriceAddPerColor'];
