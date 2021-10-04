@@ -89,11 +89,11 @@ class Rate{
         return new Rate($productid,$P_Name,$rateid,$quantity,$price,$priceaddpercolor);
     }
 
-    public static function update($P_Name,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastquantity,$lastprice,$lastpriceaddpercolor)
+    public static function update($productid,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastquantity,$lastprice,$lastpriceaddpercolor)
     {
         require("connection_connect.php");
-        $sql="UPDATE PPPOrders SET PPPOrders.Product_ID='$P_Name',PPPOrders.Quantity=$quantity ,PPPOrders.Price=$price,PPPOrders.PriceAddPerColor=$priceaddpercolor
-        WHERE  PPPOrders.Product_ID='$lastP_Name'AND PPPOrders.Quantity=$lastquantity AND PPPOrders.Price=$lastprice AND PPPOrders.PriceAddPerColor=$lastprice";
+        $sql="UPDATE PPPOrders SET PPPOrders.Product_ID='$productid',PPPOrders.Quantity=$quantity ,PPPOrders.Price=$price,PPPOrders.PriceAddPerColor=$priceaddpercolor
+        WHERE  PPPOrders.Product_ID='$lastP_Name'AND PPPOrders.Quantity=$lastquantity AND PPPOrders.Price=$lastprice AND PPPOrders.PriceAddPerColor=$lastpriceaddpercolor";
         $result=$conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
