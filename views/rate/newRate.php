@@ -1,5 +1,5 @@
 <form method="get" action="">
-    <label>P_Name <select name="P_Name">
+    <label>ProductName <select name="P_Name">
     <?php foreach($productList as $pro){
         echo "<option value = $pro->productid>$pro->P_Name</option>";}?>
     </select></label><br>
