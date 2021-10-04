@@ -14,12 +14,12 @@ class RateController{
 
         public function addRate()
     {
-        $P_Name = $_GET['P_Name'];
+        $Product_ID = $_GET['Product_ID'];
         $quantity = $_GET['Quantity'];
         $price = $_GET['Price'];
         $priceaddpercolor = $_GET['PriceAddPerColor'];
 
-        Rate::Add($P_Name,$quantity,$price,$priceaddpercolor);
+        Rate::Add($Product_ID,$quantity,$price,$priceaddpercolor);
         RateController::index();
 
     }
@@ -32,19 +32,19 @@ class RateController{
 
     public function updateFormRate()
     {
-        $P_Name=$_GET['P_Name'];
+        $Product_ID=$_GET['Product_ID'];
 
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
         $priceaddpercolor=$_GET['PriceAddPerColor'];
         $productList=Product::getAll();
-        $rate=Rate::get($P_Name,$quantity,$price,$priceaddpercolor);
+        $rate=Rate::get($Product_ID,$quantity,$price,$priceaddpercolor);
         require_once('views/rate/updateFormRate.php');
     }
 
     public function updateRate()
     {
-        $P_Name=$_GET['P_Name'];
+        $Product_ID=$_GET['Product_ID'];
         $quantity=$_GET['Quantity'];
         $price=$_GET['Price'];
         $priceaddpercolor=$_GET['PriceAddPerColor'];
@@ -52,7 +52,26 @@ class RateController{
         $lastquantity=$_GET['lastQuantity'];
         $lastprice=$_GET['lastPrice'];
         $lastpriceaddpercolor=$_GET['lastPriceAddPerColor'];
-        Rate::update($P_Name,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastquantity,$lastprice,$lastpriceaddpercolor);
+        Rate::update($Product_ID,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastquantity,$lastprice,$lastpriceaddpercolor);
+        RateController::index();
+    }
+
+    public function deleteConfirmRate()
+    {
+        $productid=$_GET['Product_ID'];
+        $quantity=$_GET['Quantity'];
+        $price=$_GET['Price'];
+        $priceaddpercolor=$_GET['lastPriceAddPerColor'];
+        $Rate=Rate::get($productid,$quantity,$price,$priceaddpercolor);
+        require_once('views/Rate/deleteConfirmRate.php');
+    }
+    public function deleteRate()
+    {
+        $productid=$_GET['Product_ID'];
+        $quantity=$_GET['Quantity'];
+        $price=$_GET['Price'];
+        $priceaddpercolor=$_GET['lastPriceAddPerColor'];
+        Rate::delete($productid,$quantity,$price,$priceaddpercolor);
         RateController::index();
     }
 
