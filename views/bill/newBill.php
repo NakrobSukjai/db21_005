@@ -1,14 +1,24 @@
 <form method = "get" action = "">
     <label>รหัสใบเสนอสินค้า <input type ="text" name="Bill_ID"/></label><br>
-    <label>วันที่ <input type = "date" name = 'Date'/></label><br>
-    <label>ลูกค้า <input type = "text" name="C_name"/></label><br>
+    <label>วันที่ <input type = "date" name ="Date" placeholder="dd-mm-yyyy" value=""/> </label><br>
+
+    <label>ลูกค้า<select name = "C_Name">
+        <?php
+            foreach($CustomerList as $cus)
+            {
+                echo "<option value=$cus->cus_id";
+                echo "> $cus->cus_name </option>";
+            }
+        ?>
+        </select>
+    </label><br>
 
     <label>เงื่อนไขการจ่าย <select name = "P_Name">
         <?php
-            foreach($billList as $bill)
+            foreach($paymentList as $pay)
             {
-                echo "<option value=$bill->Pay_Name";
-                echo "> $bill->Pay_Name </option>";
+                echo "<option value=$pay->id";
+                echo "> $pay->payment </option>";
             }
         ?>
         </select>
@@ -18,7 +28,7 @@
         <?php
             foreach ($empList as $emp) 
             {
-                echo "<option value=$emp->emp_name> $emp->emp_name </option>";
+                echo "<option value=$emp->emp_id> $emp->emp_name </option>";
             }      
         ?>
         </select>
