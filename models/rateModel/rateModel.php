@@ -88,5 +88,15 @@ class Rate{
         $priceaddpercolor=$my_row[PriceAddPerColor];
         return new Rate($productid,$P_Name,$rateid,$quantity,$price,$priceaddpercolor);
     }
+
+    public static function update($P_Name,$rateid,$quantity,$price,$priceaddpercolor,$lastP_Name,$lastrateid,$lastquantity,$lastprice,$lastpriceaddpercolor)
+    {
+        require("connection_connect.php");
+        $sql="UPDATE PPPOeders SET Product.P_Name='$P_Name',PPPOeders.PPP_ID='$rateid',PPPOeders.Quantity='$quantity',PPPOeders.Price=$price,PPPOeders.PriceAddPerColor=$priceaddpercolor
+        WHERE  Product.P_Name='$lastP_Name' AND PPPOeders.PPP_ID='$lastrateid' AND PPPOeders.Quantity='$lastquantity' AND PPPOeders.Price=$lastprice AND PriceAddPerColor=$lastpriceaddpercolor";
+        $result=$conn->query($sql);
+        require("connection_close.php");
+        return "update success $result row";
+    }
 }
 ?>
