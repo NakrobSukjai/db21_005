@@ -8,6 +8,15 @@
 <td>Update</td>
 <td>Delete</td>
 new bill [<a href="?controller=bill&action=newBill">click</a>]<br>
+
+<form method="get" action="">
+
+    <input type ="text" name= "key"/>
+    <input type = "hidden" name = "controller" value = "bill"/>
+    <button type = "submit" name="action" value ="search">Search</button>
+
+</form>
+
 <?php
     foreach($billList as $bill)
     {
