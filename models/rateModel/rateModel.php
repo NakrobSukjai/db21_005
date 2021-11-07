@@ -1,7 +1,7 @@
 <?php
 
 class Rate{
-        public $productid , $P_Name , $rateid , $quantity , $price , $priceaddpercolor  ;
+    public $productid , $P_Name , $rateid , $quantity , $price , $priceaddpercolor  ;
 
     public function __construct($productid , $P_Name , $rateid , $quantity , $price , $priceaddpercolor)
     {
