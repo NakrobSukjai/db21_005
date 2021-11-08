@@ -39,7 +39,7 @@ class Rate{
     public static function Add($productid,$quantity,$price,$priceaddpercolor)
     {
         require("connection_connect.php");
-        $sql="insert into PPPOrders(PPPOrders.Product_ID,Quantity,Price,PriceAddPerColor)values
+        $sql="insert into PPPOrders(PPPOrders.Product_ID,Quantity,Price,PriceAddPerColor) values
         ('$productid','$quantity','$price','$priceaddpercolor')";
         $result =$conn->query($sql);
         require("connection_close.php");
